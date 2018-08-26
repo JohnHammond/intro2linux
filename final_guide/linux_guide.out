@@ -1,0 +1,111 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Author's Note}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{The Raspberry Pi}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Advantages}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Disadvantages}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Future Recommendations}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{Hardware \046 Equipment}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Wireless Optional}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.6}{HDMI Output}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{The Github Repository}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Students' Private Repositories}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Class Public Repository}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Raspbian Setup Script}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{The MicroSD cards}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Background Information}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Raspbian Setup Source Code}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Training Wheels}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{On a Technical Level}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Training Wheels Source Code}{section.5}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.1}{The Startup Script}{subsection.5.2}% 20
+\BOOKMARK [3][-]{subsubsection.5.2.2}{The Wrapper Object}{subsection.5.2}% 21
+\BOOKMARK [3][-]{subsubsection.5.2.3}{The Shell Object}{subsection.5.2}% 22
+\BOOKMARK [3][-]{subsubsection.5.2.4}{General Shell Functions}{subsection.5.2}% 23
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Processing the User's Commands}{subsection.5.2}% 24
+\BOOKMARK [3][-]{subsubsection.5.2.6}{The Shell Run Function}{subsection.5.2}% 25
+\BOOKMARK [3][-]{subsubsection.5.2.7}{The Save Engine}{subsection.5.2}% 26
+\BOOKMARK [3][-]{subsubsection.5.2.8}{Loading User Data}{subsection.5.2}% 27
+\BOOKMARK [3][-]{subsubsection.5.2.9}{Saving User Data}{subsection.5.2}% 28
+\BOOKMARK [3][-]{subsubsection.5.2.10}{The LessonBook Package}{subsection.5.2}% 29
+\BOOKMARK [3][-]{subsubsection.5.2.11}{The ``Type-Out'' Effect}{subsection.5.2}% 30
+\BOOKMARK [3][-]{subsubsection.5.2.12}{General LessonBook Functions}{subsection.5.2}% 31
+\BOOKMARK [3][-]{subsubsection.5.2.13}{Loading a Lesson}{subsection.5.2}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.14}{Moving to the next Lesson }{subsection.5.2}% 33
+\BOOKMARK [3][-]{subsubsection.5.2.15}{Selecting a Lesson }{subsection.5.2}% 34
+\BOOKMARK [3][-]{subsubsection.5.2.16}{Selecting a Concept}{subsection.5.2}% 35
+\BOOKMARK [3][-]{subsubsection.5.2.17}{The Main Loop}{subsection.5.2}% 36
+\BOOKMARK [2][-]{subsection.5.3}{The JSON Lessons}{section.5}% 37
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Using HJSON}{subsection.5.3}% 38
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Getting HJSON}{subsection.5.3}% 39
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Converting HJSON to JSON}{subsection.5.3}% 40
+\BOOKMARK [3][-]{subsubsection.5.3.4}{HJSON Lesson File Syntax}{subsection.5.3}% 41
+\BOOKMARK [2][-]{subsection.5.4}{Your Mileage May Vary}{section.5}% 42
+\BOOKMARK [1][-]{section.6}{The Scavenger Hunt}{}% 43
+\BOOKMARK [2][-]{subsection.6.1}{Conceptual Design}{section.6}% 44
+\BOOKMARK [2][-]{subsection.6.2}{Technical Design}{section.6}% 45
+\BOOKMARK [2][-]{subsection.6.3}{The Database Schema}{section.6}% 46
+\BOOKMARK [2][-]{subsection.6.4}{The Clean Script}{section.6}% 47
+\BOOKMARK [2][-]{subsection.6.5}{The Setup Script }{section.6}% 48
+\BOOKMARK [2][-]{subsection.6.6}{The Backend Server Source Code}{section.6}% 49
+\BOOKMARK [3][-]{subsubsection.6.6.1}{Importing the Modules}{subsection.6.6}% 50
+\BOOKMARK [3][-]{subsubsection.6.6.2}{Server Configuration}{subsection.6.6}% 51
+\BOOKMARK [3][-]{subsubsection.6.6.3}{Configuration Validation}{subsection.6.6}% 52
+\BOOKMARK [3][-]{subsubsection.6.6.4}{Database Boilerplate}{subsection.6.6}% 53
+\BOOKMARK [3][-]{subsubsection.6.6.5}{Template Rendering Wrapper}{subsection.6.6}% 54
+\BOOKMARK [3][-]{subsubsection.6.6.6}{The Welcome Page}{subsection.6.6}% 55
+\BOOKMARK [3][-]{subsubsection.6.6.7}{Registration Functionality}{subsection.6.6}% 56
+\BOOKMARK [3][-]{subsubsection.6.6.8}{Login Functionality}{subsection.6.6}% 57
+\BOOKMARK [3][-]{subsubsection.6.6.9}{Session Handling for Logins}{subsection.6.6}% 58
+\BOOKMARK [3][-]{subsubsection.6.6.10}{The Scoreboard}{subsection.6.6}% 59
+\BOOKMARK [3][-]{subsubsection.6.6.11}{Submission Validation}{subsection.6.6}% 60
+\BOOKMARK [3][-]{subsubsection.6.6.12}{``The Main Function''}{subsection.6.6}% 61
+\BOOKMARK [2][-]{subsection.6.7}{The Frontend Website Source Code}{section.6}% 62
+\BOOKMARK [3][-]{subsubsection.6.7.1}{Example Jinja2 Templates}{subsection.6.7}% 63
+\BOOKMARK [3][-]{subsubsection.6.7.2}{The Base Page Template}{subsection.6.7}% 64
+\BOOKMARK [3][-]{subsubsection.6.7.3}{The Frontend Javascript}{subsection.6.7}% 65
+\BOOKMARK [3][-]{subsubsection.6.7.4}{The Frontend Submission Handler}{subsection.6.7}% 66
+\BOOKMARK [2][-]{subsection.6.8}{The Challenges Configuration File}{section.6}% 67
+\BOOKMARK [3][-]{subsubsection.6.8.1}{The Importable Navigation}{subsection.6.8}% 68
+\BOOKMARK [3][-]{subsubsection.6.8.2}{Example Challenge JSON Syntax}{subsection.6.8}% 69
+\BOOKMARK [2][-]{subsection.6.9}{The End-user Setup Script}{section.6}% 70
+\BOOKMARK [3][-]{subsubsection.6.9.1}{The Script Source Code}{subsection.6.9}% 71
+\BOOKMARK [2][-]{subsection.6.10}{YMMV... Again}{section.6}% 72
+\BOOKMARK [1][-]{section.7}{Filters Activity}{}% 73
+\BOOKMARK [2][-]{subsubsection.7.0.1}{The JSON Challenges}{section.7}% 74
+\BOOKMARK [1][-]{section.8}{SSH Activity}{}% 75
+\BOOKMARK [2][-]{subsection.8.1}{The Markdown Source}{section.8}% 76
+\BOOKMARK [2][-]{subsection.8.2}{The Learning Content}{section.8}% 77
+\BOOKMARK [1][-]{section.9}{The Scripting Playground}{}% 78
+\BOOKMARK [2][-]{subsection.9.1}{The Vision}{section.9}% 79
+\BOOKMARK [2][-]{subsection.9.2}{The Backend Server}{section.9}% 80
+\BOOKMARK [3][-]{subsubsection.9.2.1}{Python Server Modifications}{subsection.9.2}% 81
+\BOOKMARK [2][-]{subsection.9.3}{The New Database Schema}{section.9}% 82
+\BOOKMARK [2][-]{subsection.9.4}{The Game Setup Script}{section.9}% 83
+\BOOKMARK [3][-]{subsubsection.9.4.1}{Creating the Repository}{subsection.9.4}% 84
+\BOOKMARK [3][-]{subsubsection.9.4.2}{Adding the Binaries to the Repo}{subsection.9.4}% 85
+\BOOKMARK [3][-]{subsubsection.9.4.3}{General Functions}{subsection.9.4}% 86
+\BOOKMARK [3][-]{subsubsection.9.4.4}{The Main Function}{subsection.9.4}% 87
+\BOOKMARK [2][-]{subsection.9.5}{The Random Binary ``Minutehash''}{section.9}% 88
+\BOOKMARK [3][-]{subsubsection.9.5.1}{Beware of Architecture}{subsection.9.5}% 89
+\BOOKMARK [2][-]{subsection.9.6}{The Backend Server Setup Script}{section.9}% 90
+\BOOKMARK [2][-]{subsection.9.7}{The JSON Configuration}{section.9}% 91
+\BOOKMARK [2][-]{subsection.9.8}{The Solutions}{section.9}% 92
+\BOOKMARK [2][-]{subsection.9.9}{Use at Your Discretion}{section.9}% 93
+\BOOKMARK [1][-]{section.10}{Installing Software Guide}{}% 94
+\BOOKMARK [2][-]{subsection.10.1}{The Learning Content}{section.10}% 95
+\BOOKMARK [1][-]{section.11}{The Web Exploit Exercise}{}% 96
+\BOOKMARK [2][-]{subsection.11.1}{The Idea}{section.11}% 97
+\BOOKMARK [2][-]{subsection.11.2}{The Website}{section.11}% 98
+\BOOKMARK [2][-]{subsection.11.3}{Elliot}{section.11}% 99
+\BOOKMARK [2][-]{subsection.11.4}{Angela}{section.11}% 100
+\BOOKMARK [2][-]{subsection.11.5}{Gideon}{section.11}% 101
+\BOOKMARK [2][-]{subsection.11.6}{Victory!}{section.11}% 102
+\BOOKMARK [3][-]{subsubsection.11.6.1}{Don't Trust all your Users}{subsection.11.6}% 103
+\BOOKMARK [2][-]{subsection.11.7}{Aftermath}{section.11}% 104
+\BOOKMARK [2][-]{subsection.11.8}{Reusability}{section.11}% 105
+\BOOKMARK [1][-]{section.12}{MySQL Guide}{}% 106
+\BOOKMARK [1][-]{section.13}{The Distribution Project}{}% 107
+\BOOKMARK [2][-]{subsection.13.1}{The 2016 Distros}{section.13}% 108
+\BOOKMARK [1][-]{section.14}{Final Quiz}{}% 109
+\BOOKMARK [2][-]{subsection.14.1}{The Questions}{section.14}% 110
+\BOOKMARK [1][-]{section.15}{Final Thoughts}{}% 111

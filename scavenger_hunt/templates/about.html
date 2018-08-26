@@ -1,0 +1,10 @@
+{% extends "base_page.html" %}
+{% block content %}
+
+	<h2> About </h2>
+
+	{% if app_about %}
+		{{ app_about | safe }}
+	{% endif %}
+
+{% endblock %}

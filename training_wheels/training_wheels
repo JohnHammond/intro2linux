@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Author: John Hammond
+# @Date:   2016-08-24 23:42:10
+# @Last Modified by:   John Hammond
+# @Last Modified time: 2016-08-28 13:22:13
+
+import readline
+import sys
+import time
+import socket
+import os
+import subprocess
+import textwrap
+import threading
+import json
+
+try:
+	import colorama
+except ImportError as e:
+
+	print '''
+[!] Error importing colorama! Training Wheels works best with colorama. 
+You should be able to install it with the command:
+
+sudo apt-get install python-colorama
+'''
+
+	exit(-1)
+
+from shell.wrapper import TrainingWheelsWrapperClass
+
+from colors.colors import *
+
+if ( __name__ == "__main__" ):
+
+	TrainingWheels = TrainingWheelsWrapperClass()
+
+	TrainingWheels.run()
+	'''
+	# This invokes the Training Wheels shell, which kickstarts the
+	# lessons and all the other interactions with the program.
+	'''

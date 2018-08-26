@@ -1,0 +1,226 @@
+{
+
+  "name" : "3. Your Home Directory",
+
+# ==============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "`pwd` means Print Working Directory",
+
+"message" : '''
+
+That `pwd` command, as I'm sure you read in the man page, means "print working
+directory". Run the `pwd` command now.
+
+
+  ''',
+
+"command_waiting" : "pwd",
+
+"incorrect" : "Run the command `pwd`.",
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Your current directory is also in your prompt.",
+
+"message" : '''
+
+`pwd` printed to standard output your WORKING DIRECTORY, or where you currently
+are inside the Linux file system. Whenever you are inside the shell, you reside
+somewhere in the filesystem. You can see it is very similar to that blue text that
+you will see in your prompt. Your prompt typically shows where you are in the file
+system, so you don't have to run `pwd` all the time.
+
+Note the only difference: the `pwd` output starts with `/home/pi` while the
+blue text in your prompt starts with a `~` tilde instead. Do you see it?
+
+
+  ''',
+
+"command_waiting" : "yes",
+
+"incorrect" : '''Just to review, please enter `yes` when you're ready to move on.
+Remember that Control + C while end the running program.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "The tilde character is a special character in Linux",
+
+"message" : '''
+
+Run the `cd` command to "Change Directory" to that tilde. `cd` will take the
+directory as an argument, like: `cd ~`
+
+
+  ''',
+
+"command_waiting" : "cd ~",
+
+"incorrect" : '''`cd` to that tilde (it takes it as an argument).'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The ~ character actually means your home directory!",
+
+"message" : '''
+
+Now the blue text in your prompt should have changed! You're currently at that
+`~` tilde directory. Trying running `pwd` again.
+
+
+  ''',
+
+"command_waiting" : "pwd",
+
+"incorrect" : '''Run `pwd` again.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "~ and /home/<USERNAME> are one and the same.",
+
+"message" : '''
+
+Now it says you are at the `/home/pi` directory!
+
+So in Linux, this is your HOME directory. You can think of it as like your
+"My Documents" folder in Windows -- it is where all of your own personal 
+files and folders are kept. It correlates to your username.
+
+Try running `whoami`.
+
+  ''',
+
+"command_waiting" : "whoami",
+
+"incorrect" : '''Run `whoami`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The <USERNAME> part of the home directory is your user!",
+
+"message" : '''
+
+You are "pi"! That's why your HOME directory is in /home/pi. The last part
+of it is your username, to denote that it is YOUR home directory.
+
+And we got here from that ~ tilde character. That means the ~ character
+is a special symbol in Linux that represents your home directory.
+
+Try and run `cd` without any arguments.
+
+
+  ''',
+
+  "command_waiting" : "cd",
+
+  "incorrect" : '''Run `cd` without any arguments.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "`cd` without any arguments takes you to your home directory.",
+
+"message" : '''
+
+Check your prompt -- you haven't changed directory anywhere. 
+
+Trust me on this one, and try `cd ..`
+
+
+  ''',
+
+  "command_waiting" : "cd ..",
+
+  "incorrect" : '''Enter `cd ..`'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "There are many ways to get to your home directory.",
+
+"message" : '''
+Now try running `cd` one more time. Enter just `cd`, no arguments.
+
+  ''',
+
+  "command_waiting" : "cd",
+
+  "incorrect" : '''Run cd without any arguments.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "cd is how you navigate anywhere in the Linux ",
+
+"message" : '''
+
+See your prompt changed! When you run `cd` without any arguments, it takes 
+you back to your home directory, the ~. Before, when you were already there,
+it didn't look like you moved anywhere -- but you did go back to /home/pi.
+
+Run `pwd` one last time.
+
+
+  ''',
+
+  "command_waiting" : "pwd",
+
+  "incorrect" : '''Run `pwd` one last time.'''
+
+  },
+
+# ----------------------------------------------------------------------
+{
+    
+  "tag" : "Summary on how to access your home directory",
+
+"message" : '''
+
+There are lots of ways to get to your home directory. You could type it all 
+out, and run
+
+  `cd /home/pi`
+
+or you could pass in that ~ special symbol to get there, like `cd ~`.
+Or, you could just enter `cd` without any arguments.
+
+
+  ''',
+
+  },
+  
+  ]
+}

@@ -1,0 +1,291 @@
+html, body{
+	font-family: "Helvetica";
+	height: 99%;
+
+	background-color: #ededef;
+	color: #585858;
+	padding-bottom: 60px;
+}
+#page{
+	
+	max-width: 900px;
+	min-height: 80%;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px silver;
+	padding-bottom: 20px;
+	
+}
+
+#content{
+	margin-top: 80px;
+	padding: 0px 80px;
+	padding-bottom: 20px;
+	
+}
+
+
+#title{
+	padding-top: 20px;
+	padding-left: 20px;
+
+	margin: 30px;
+	font-size: 240%;
+	padding-bottom: 20px;
+}
+
+.navigation{
+
+	width: 95.7%;
+	list-style: none;
+	
+	margin: -25px 20px;
+	
+	margin-left: auto;
+	margin-right: auto;
+	height: 35px;
+	border-bottom: 1px solid silver;
+	vertical-align: middle;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feccb1+0,ea5507+79,f17432+92,fb955e+100 */
+	background: #feccb1; /* Old browsers */
+	background: -moz-linear-gradient(top, #feccb1 0%, #ea5507 79%, #f17432 92%, #fb955e 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #feccb1 0%,#ea5507 79%,#f17432 92%,#fb955e 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #feccb1 0%,#ea5507 79%,#f17432 92%,#fb955e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+	border-bottom: 2px solid #eaeaea;
+}
+
+.navigation li{
+	min-width: 100px;
+	
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	margin: 6px;
+
+}
+.navigation li:hover{
+	text-shadow: 0px 0px 10px black;
+}
+
+pre{
+
+	border: 1px solid #bebebe;
+	font-size: 83%;
+
+	margin-left: auto;
+	margin-right: auto;
+	text-indent: 0px;
+	text-align: left;
+	white-space: pre-line;
+	padding: 10px;
+	vertical-align: middle !important;
+	background-color: #fafafa;
+	/*overflow-x: scroll;*/
+	color: darkblue;
+
+}
+
+.navigation a{
+	
+	color: white;
+	text-shadow: 0px 0px 5px black;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 20px;
+	
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+#challenges{
+
+	border: 1px solid #eaeafa;
+	border-radius: 5px;
+	padding: 20px;
+	
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 0px 30px #eaeaea;
+	
+}
+
+#challenges input{
+
+	border: 1px solid #eaeafa;
+	border-radius: 5px;
+	
+	
+	box-shadow: 0px 0px 30px #eaeaea;
+}
+
+#scoreboard{
+
+	border: 1px solid #eaeafa;
+	border-radius: 5px;
+	padding: 20px;
+	
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 0px 30px #eaeaea;
+}
+
+
+input{
+	border: 1px solid silver;
+	border-radius: 3px;
+	/*font-size: 20px;*/
+
+	width: 95%;
+	
+	padding: 3px;
+	margin: 10px;
+}
+
+#login_form{
+
+	
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #eaeafa;
+	border-radius: 5px;
+	padding: 30px 150px;
+	
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 0px 30px #eaeaea;
+}
+
+#register_form{
+
+	
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #eaeafa;
+	border-radius: 5px;
+	padding: 30px 150px;
+	
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 0px 30px #eaeaea;
+}
+
+
+.challenge{
+	
+	border: 1px solid #eaeaea;
+	padding: 10px;
+	margin-bottom:10px;
+}
+
+.message{
+	padding: 8px;
+	position: absolute;
+	top:154px;
+	background-color: #FFF8DC;
+	border: 1px solid #EAC117;
+	color: #966F33;
+	width: 883px;
+	font-weight: bold;
+	text-align: center;
+	display: none;
+}
+
+.success{
+	padding: 8px;
+	position: absolute;
+	top:154px;
+	background-color: #eeFFee;
+	border: 1px solid #254117;
+	color: #348017;
+	width: 883px;
+	font-weight: bold;
+	text-align: center;
+	display: none;
+}
+
+.error{
+
+	padding: 8px;
+	position: absolute;
+	top:154px;
+	width: 883px;
+	background-color: #FFeeee;
+	border: 1px solid #9F000F;
+	
+	color: #C11B17;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: bold;
+	text-align: center;
+	display: none;
+}
+.challenge_title{
+	
+	border: 1px solid #eaeaea;
+	padding: 5px;
+	margin:-11px;
+
+	background-color: #fbfbfb;
+	
+	cursor: pointer;
+}
+
+.challenge form{
+	
+	margin-top: 30px;
+}
+
+.challenge li{
+	list-style: none;
+	float: left;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	margin-top: -5px;
+}
+
+.challenge_title span{
+
+	
+	float: right;
+	vertical-align: middle;
+	opacity:.5;
+	margin-right: 5px;
+
+}
+
+.status{
+
+	padding: 8px;
+	position: absolute;
+	top:154px;
+	width: 883px;
+	text-align: right;
+	opacity: .5;
+	z-index: 5;
+	font-size: smaller;
+}
+
+p {
+	text-indent: 20px;
+	line-height: 140%;
+}
+
+#content a{
+	color: #56A5EC;
+}
+#content a:visited{
+	color: #56A5EC;
+}
+
+th{
+
+	text-align: left;
+	text-decoration: underline;
+}

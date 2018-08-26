@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<apport>
+  <ignore mtime="1461374304" program="/opt/sublime_text/sublime_text"/>
+  <ignore mtime="1453471676" program="/opt/hopper-v3/Hopper"/>
+  <ignore mtime="1452699271" program="/usr/bin/strace"/>
+</apport>
+

@@ -1,0 +1,439 @@
+{
+
+  "name" : "6. Special Places and Catting Files",
+
+# ==============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "Let's start at the root directory",
+
+"message" : '''
+
+Let's start at the root directory. Please `cd` there.
+
+  ''',
+
+"command_waiting" : "cd /",
+
+"incorrect" : "Please run `cd /`.",
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Reminder: `ls -a` lists all files and folders -- including hidden ones!",
+
+"message" : '''
+
+Just to get our bearings, run `ls -a` to see ALL the files we have to work with
+in the root directory.
+
+  ''',
+
+"command_waiting" : "ls -a",
+
+"incorrect" : ''' Run `ls -a` to see ALL files and folders.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Reminder: . and .. are special symbols, just like / and ~!",
+
+"message" : '''
+
+Remember that `ls -a` will show the . and .. special symbols, and all HIDDEN files
+in the current directory. It doesn't look like there are very many here.
+
+Let's use a relative path (that means no preceding / remember?) to get to the `dev` folder.
+
+  ''',
+
+"command_waiting" : "cd dev",
+
+"incorrect" : '''You want to change into the /dev directory, but just relative 
+to where you are. So you don't need the root directiory's forward slash:
+  `cd dev`'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You should get into a habit of always checking out the files in a folder",
+
+"message" : '''
+
+What does this folder contain? List Stuff, please.
+
+  ''',
+
+"command_waiting" : "ls",
+
+"incorrect" : '''We don't really care about hidden files '''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "/dev holds all file objects for devices that you use with your computer",
+
+"message" : '''
+
+It's a lot of stuff, right? The /dev folder holds DEVICES that you interact with when
+you use your computer. Remember we told you that your mouse and your keyboard and
+even your monitor are all FILES in the world of Linux? They are considered DEVICES and
+because of that, are stored in the /dev folder.
+
+Whenever you're ready, let's use an absolute path and `cd` to /usr/bin.
+
+  ''',
+
+"command_waiting" : "cd /usr/bin",
+
+"incorrect" : '''Try `cd .`'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "/usr/bin and /bin hold binaries that are the commands and programs you run",
+
+"message" : '''
+`ls` in this directory.
+
+  ''',
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''Run the `ls` command.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You can use the `which` command to find the path of some binaries.",
+
+"message" : '''
+
+Lots of stuff here too, right? In this directory, /usr/bin and even /bin hold
+BINARIES that are the programs and commands and things that you run from inside
+the shell. Naturally, there are a lot, but this their default location.
+
+A really interesting command is `which`. Don't laugh ... but try and run `man which`.
+
+  ''',
+
+  "command_waiting" : "man which",
+
+  "incorrect" : '''Run `man which`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "which which is which?",
+
+"message" : '''
+
+Did you read the description? It can tell you where a certain command actually
+lives in the Linux filesystem. It takes the command as an argument. 
+
+Just to be funny, let's try and run `which which`.
+
+
+  ''',
+
+  "command_waiting" : "which which",
+
+  "incorrect" : '''Run `which which`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "`which` itself is in /usr/bin",
+
+"message" : '''
+
+Ha! The `which` command itself lives inside /usr/bin, that same directory we are in now!
+
+What about other commands that we have used before? What is `which ls`?
+
+
+  ''',
+
+  "command_waiting" : "which ls",
+
+  "incorrect" : '''Run `which ls`.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Reminder: the /bin and /usr/bin folders store binaries for common commands",
+
+"message" : '''
+
+The `ls` command, the actually program, or the binary executable that runs whenever we
+enter the command, actually exists as a file, in the /bin directory! That is cool.
+
+Let's move on over to the /etc directory. 
+
+  ''',
+
+  "command_waiting" : "cd /etc",
+
+  "incorrect" : '''Use an absolute path for this one. `cd /etc`'''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "/etc stores a lot of common configurations and important system files",
+
+"message" : '''
+And ls?
+  ''',
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''Run `ls`.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "/etc holds /etc/passwd which can be a very valuable file",
+
+"message" : '''
+
+Lots of stuff, as usual. So the /etc directory actually holds a lot of common configurations and important system files. One of the most important ones, is 
+`/etc/passwd`. 
+
+The `/etc/passwd` file stores usernames, user passwords, user ids and home directory
+information and other important information for each user account on a Linux computer.
+
+Let's try and read it.
+
+This is very important, so read closely -- are you paying attention?
+
+  ''',
+
+  "command_waiting" : "yes",
+
+  "incorrect" : '''Please tell me `yes` so I know that you are paying attention.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You can display a file on standard output with the `cat` command.",
+
+"message" : '''
+
+Okay. In Linux, you can display a file onto the standard output (just have the file
+contents printed out on the terminal) by a command called `cat`.
+
+Seriously, the command is called `cat`. This is actually because it is short for
+`concatenate` -- which means adding them all together. You could, if you really
+wanted to, cat out multiple files and it would display them in sequence --
+essentially concatenating them and adidng them together.
+
+But for our purposes, we only need to display one file. `cat` takes the filename
+as an argument. So how can we read that `/etc/passwd` file?
+
+  ''',
+
+  "command_waiting" : "cat /etc/passwd",
+
+  "incorrect" : '''Use an absolute path this time. So the command would be
+  `cat /etc/passwd`.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You can display a file on standard output with the `cat` command.",
+
+"message" : '''
+
+You got it! Did you see all that output? Scroll up as you need to.
+
+So this probably looks like a lot of nonsense to you right now -- which is okay.
+But it does show some interesting information that you should totally understand at
+this point. See your username on one line? The `pi` account.
+
+You can see the absolute path to your home directory, `/home/pi` and you 
+can even see the shell you use: `bash`. Remember those binaries are stored in
+/bin and /usr/bin?
+
+Once you are all done looking and ready to move on, cd to `/tmp`
+
+  ''',
+
+  "command_waiting" : "cd /tmp",
+
+  "incorrect" : '''Use an absolute path to cd to the /tmp directory.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The /tmp directory is the temporary directory.",
+
+"message" : '''
+And ls real quick?
+  ''',
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''Run `ls`.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "/tmp stores temporary files and folders, just used for quick data",
+
+"message" : '''
+
+So there is not a lot in here right now. But, this `/tmp` folder is the
+TEMPORARY folder. Obviously, it is where more temporary files and folders go
+that don't need a more permanent spaces in the Linux file system -- they
+are just used for quick processes or any other temporary tasking.
+
+You can actually see the save file I use to keep track of your progress in Training
+Wheels, here, that `training_wheels.log` file. 
+
+Try and cat it out right now.
+
+  ''',
+
+  "command_waiting" : "cat training_wheels.log",
+
+  "incorrect" : '''Run `cat training_wheels.log`'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "/tmp is world-readable and world-writeable",
+
+"message" : '''
+
+You may or may not be able to see the saved data that Training Wheels stores.
+Sometimes it is shown while running, sometimes not. Regardless, let's move on.
+
+Are there any hidden files in this directory? Please list ALL files.
+
+
+  ''',
+
+  "command_waiting" : "ls -a",
+
+  "incorrect" : '''If you don't remember how to list ALL files, check out the 
+  man page for the `ls` command.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "/tmp is world-readable and world-writeable",
+
+"message" : '''
+
+An important thing to note is that the /tmp directory, being a TEMPORARY directory,
+has no real owner. That means that ANYONE, any user on your Linux computer can
+read to or write to the /tmp folder. It's a guest room in your house. If you
+allow people into your home (let others log into your computer), anyone can stay in the guest house (read or write or do anything they want in the /tmp folder).
+
+When you're all done, `cd` to go home.
+
+
+  ''',
+
+  "command_waiting" : "cd",
+
+  "incorrect" : '''When you are all done, enter `cd` to get back home.'''
+
+
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Summary of the Lesson",
+
+"message" : '''
+
+This was meant to be a quick introductory look at some of the special places 
+in the Linux filesystem, and just briefly letting you use cat to look at a file.
+
+There are certainly other interesting and special places in the Linux filesystem 
+and you will encounter them and learn about them as time goes on -- but now,
+just try and remember those basics.
+
+  /bin, /usr/bin -- binaries that you run from the command-line
+  /dev           -- devices that you interact with to use your computer
+  /etc           -- important system files, logs, and configuration files
+  /tmp           -- the temp directory for temp files. world readable & writeable
+
+And don't forget, cat is how you can display the contents of a file, have it
+printed onto standard output.
+
+
+  '''
+    
+  }
+
+  ]
+}

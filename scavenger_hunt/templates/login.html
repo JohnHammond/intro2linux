@@ -1,0 +1,20 @@
+{% extends "base_page.html" %}
+{% block content %}
+
+	<h2> Login </h2>
+
+	<p>
+		Please log in with a registered username.
+	</p>
+	<p>
+		<strong> Note that the username field is case-sensitive.</strong>
+	</p>
+
+	<br>
+	<form id="login_form" action="{{ url_for('login') }}" method="post">
+		<strong>Username:</strong> <input type="text" name="username">
+		<strong>Password:</strong> <input type="password" name="password">
+		<input type="submit" value="Login">
+	</form>
+
+{% endblock %}

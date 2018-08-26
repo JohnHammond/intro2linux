@@ -1,0 +1,160 @@
+{
+
+  "name" : "2. The Man Pages",
+
+# ==============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "What is the `man` command?",
+
+"message" : '''
+
+Here's another peculiar command: `man`. Try it! Don't give it any arguments
+just yet.
+
+
+  ''',
+
+"command_waiting" : "man",
+
+"incorrect" : "Enter just the `man` command.",
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "The `man` command takes arguments to find a manual",
+
+"message" : '''
+
+Notice how it asked you about a "manual page"? That is exactly what you think it
+is. The `man` command will show you a manual regarding any certain command, so
+you can learn more about what that command does, or how you can use it.
+
+Try it with an argument. Let's check out the manual for that `yes` command.
+
+
+  ''',
+
+"command_waiting" : "man yes",
+
+"incorrect" : '''What do you think you would enter to see the manual for the `yes` command?'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Finding out command's arguments with man pages",
+
+"message" : '''
+
+Woo! It zoomed by. If you need to, you can scroll with the mouse to look back
+on all the output. Or, you can use Shift + PageUp and Shift + PageDown with 
+the keyboard.
+
+See how the "man page" tells you about the program, and what it does? It even
+shows you other kinds of special arguments you can give it to have the program
+operate in a different way. Try passing that `--version` argument to `yes`.
+
+
+  ''',
+
+"command_waiting" : "yes --version",
+
+"incorrect" : '''You should get the `--version` of the `yes` command!'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The man page for the `pwd` command.",
+
+"message" : '''
+
+Now, when you passed in that `--version` argument to the `yes` command, it
+didn't repeatedly print anything out on the screen like usual! It just told you about
+the program and that's all it did. So, to drive the point home one last time,
+arguments change the way a command will operate.
+
+And keep in mind, the "man page" of any command will tell you all about it,
+what it does, what arguments it takes, etc..
+
+Check out the man page for `echo`.
+
+
+  ''',
+
+"command_waiting" : "man echo",
+
+"incorrect" : '''View the man page for the `echo` command.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+
+  {
+    
+"tag" : "Longhand and shortnotation for arguments in man pages",
+
+"message" : '''
+
+Remember you can scroll with Shift + PageUp/PageDown. 
+
+See this still has the same `--version` and `--help` arguments, 
+like the `yes` command does? Those arguments, with two hyphens and
+a word at the end, make for a "verbose" argument format. They 
+explain more of what the argument really does, since they are a
+written out word.
+
+But `echo` has some other arguments, like the `-n` or `-e` which
+are the shorthand notation. You'd have to look at the man page or
+the help text to figure out what those do.
+
+Try the man page for a new command `pwd`.
+
+
+  ''',
+
+"command_waiting" : "man pwd",
+
+"incorrect" : '''View the man page for the `pwd` command.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "`pwd` has both longhand and shorthand",
+
+"message" : '''
+
+
+So in this one you should still see the `--help` and `--version`
+usual arguments, but can you see the shorthand AND the longhand 
+notation both on the same line? Like for the `--logical` argument,
+it could also accept `-l`.
+
+That means that they both do the same thing -- they are synonymous
+with one another, in the case for this command.
+
+You should try entering the `pwd` command now.
+
+  ''',
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  ]
+}

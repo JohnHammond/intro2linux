@@ -1,0 +1,149 @@
+{
+	"app_title" : "Linux Scavenger Hunt",
+
+	"app_navigation_logged_out": {		
+		"About": "/about",
+		"Scoreboard": "/scoreboard",
+		"Login": "/login",
+		"Register": "/register" },
+
+	"app_navigation_logged_in": {
+
+		"Tasks": "/challenges",
+		"About": "/about",
+		"Scoreboard": "/scoreboard",
+		"Log Out": "/logout"
+	},
+
+	"app_about": "<p>
+			This is a filesystem scavenger hunt for the <a href='http://uscga.edu'>United States Coast Guard Academy</a> 2016 Intro to Linux class!
+		</p>
+		<p>
+			There is not meant to be much \"challenge\" in this scavenger hunt ... but the difficulty should increase 
+			as you move through the tasks. It is meant to have you practice and really start to master
+			moving around the Linux filesystem and hunting for things.
+		</p>
+	",
+
+	"challenges": [
+
+		{ 
+			"title": "0. Getting Started!",
+
+			"prompt": "
+			<p> Run the Scavenger Hunt program to get started! </p>
+
+			<p>
+				When you are inside the repository and in the `scavenger_hunt` directory,
+				 simply run the command <code>sudo ./scavenger_hunt</code>
+			</p>
+			",
+
+			"possible_answers": [ "USCGA{the_period_is_a_symbol_for_the_current_directory}" ],
+			"downloadable_files": [],
+			"points" : 0
+		},
+		{ 
+
+			"title": "1. Growing Roots",
+
+			"prompt": "
+				<p> There's a special file in the root directory. What does it contain? </p>
+			",
+
+			"possible_answers": [ "USCGA{the_start_of_the_linux_filesystem_is_a_forward_slash}" ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "2. Stuck in a Bin",
+
+			"prompt": "
+				<p> Find one file in the <code>/usr/bin/</code> directory. </p>
+				<p><small> <b>Hint:</b> You may need to narrow your scope. What was the name of 
+				the file in the previous task? </small></p>
+			",
+
+			"possible_answers": [ "USCGA{/bin_and_/usr/bin/_is_where_command_line_programs_are_stored}" ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "3. Hiding at Home",
+
+			"prompt": "
+
+				<p>
+					I know there is some file in your home directory... but <i>where?!</i>
+				</p>
+			",
+
+			"possible_answers": [ "USCGA{hidden_files_in_linux_start_with_a_period}" ],
+			"points" : 1
+		},
+
+		{ 
+			"title": "4. Temporary Contemporary",
+
+			"prompt": "
+
+				<p>
+					There is a file in the temporary folder... 
+				</p>
+				<p>
+					But not <i>just</i> the temporary folder.
+				</p>
+
+			",
+
+			"possible_answers": [ "USCGA{/tmp_is_where_temporary_files_and_folders_go}" ],
+			"points" : 1
+		},
+		{ 
+			"title": "5. I lost my file!",
+
+			"prompt": "
+
+				<p> Help! I lost my file! I know I left it somewhere, though! </p>
+				<p> Oh! I do remember that it was with a lot of <i>application settings folders, 
+				configuration files, passwords, <b>etc.</b>.</i></p>
+			",
+
+			"possible_answers": [ "USCGA{/etc_is_where_configs_and_user_passwords_are_stored}" ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "6. Parent Directory",
+
+			"prompt": "
+				<p>
+					My file went down this path, but it turns out <b>it was just one step behind.</b>
+				</p>
+				<p>Start in this directory: <code><b>/tmp/first_steps/</b></code></p>
+			",
+
+			"possible_answers": [ "USCGA{.._is_the_fastest_way_to_move}" ],
+			"points" : 10
+		},
+		{ 
+
+			"title": "7. The Labyrinth",
+
+			"prompt": "
+				<p>
+					I lost my file... and now there is no way I'll find it!
+				</p>
+				<p>Start in this directory: <code><b>/tmp/labyrinth/</b></code></p>
+
+				<p><small><b>Hint:</b> if you want to work <i>smarter</i> and not harder, 
+				check out the man page for <code>ls</code> and see how you can go through 
+				subdirectories with just one command.</small></p>
+			",
+
+			"possible_answers": [ "USCGA{ls_-R_makes_for_awesome_recursion}" ],
+			"points" : 10
+		}
+		
+	]
+}

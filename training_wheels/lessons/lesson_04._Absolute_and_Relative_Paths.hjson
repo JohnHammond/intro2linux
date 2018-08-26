@@ -1,0 +1,180 @@
+{
+
+  "name" : "4. Absolute and Relative Paths",
+
+# ==============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "All files and folders bases off of the root directory, '/'",
+
+"message" : '''
+
+You should notice, by now, that each path in Linux is built off of by forward-slashes, 
+"/". You are in the /home/pi folder, which all bases off the "root" directory. 
+
+The "root" directory is the uppermost-level of the Linux filsystem. It is actually
+denoted by a single forward-slash "/". Try changing directory to there: "cd /"
+
+
+  ''',
+
+"command_waiting" : "cd /",
+
+"incorrect" : "Change directory to the root directory: `cd /`.",
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Check out the files in your directory with the `ls` command.",
+
+"message" : '''
+
+Now you've done this before, but you can check out all the different files that 
+are in your current working directory, by running the `ls` command without any
+arguments. 
+
+
+  ''',
+
+"command_waiting" : "ls",
+
+"incorrect" : '''Run `ls` to "list stuff" in the current directory.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "You can explore all kinds of files and folders.",
+
+"message" : '''
+
+Now you can see all those folders, which build out a path -- other folders like
+"/bin", or "/dev", or "/etc" and the subdirectories in each one of those keep building
+off of each other with a subsequent forward slash.
+
+Change into the "/sys" directory. Do this with the command "cd /sys"
+
+
+  ''',
+
+"command_waiting" : "cd /sys",
+
+"incorrect" : '''Change directory into the `/sys` folder with `cd /sys`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "`ls` is a good command to run whenever you change directory.",
+
+"message" : '''
+
+You see your prompt change, as usual? 
+
+It is a good habit to run `ls` once you move into a new directory so you know what
+files and folders you are currently working with. Run `ls` one more time.
+
+
+  ''',
+
+"command_waiting" : "ls",
+
+"incorrect" : '''Run `ls` one more time.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "A relative path means you start from your current location",
+
+"message" : '''
+
+Change into that `fs` folder, using a RELATIVE PATH. Just supply the name of
+the folder as the argument to the `cd` command. It should look like: `cd fs`
+
+
+  ''',
+
+"command_waiting" : "cd fs",
+
+"incorrect" : '''`cd` into the `fs` folder using a relative pathl just run `cd fs`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Reminder: the root directory is / ",
+
+"message" : '''
+
+Now your path should be `/sys/fs`, with all of those folders that we just moved through
+separated by those forward-slashes. You moved into this directory using what is called
+a RELATIVE PATH. Previously, you were in the `/sys` folder. Then you just said you 
+wanted the "fs" folder, so Linux to move you RELATIVE to your current location in
+the filesystem. 
+
+When you are ready, change back to the root directory.
+
+
+  ''',
+
+  "command_waiting" : "cd /",
+
+  "incorrect" : '''Remember, the root directory is just a "/". Please `cd` there.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "An absolute path means you write out the entire path, starting from /",
+
+"message" : '''
+
+Now, let's try moving back to that `/sys/fs`, but let's do it with an ABSOLUTE PATH
+rather than a relative path. All that means is typing out the whole path, all the way
+from the root directory. Try it!
+
+
+  ''',
+
+  "command_waiting" : "cd /sys/fs",
+
+  "incorrect" : '''Use an absolute path. That means the whole thing: `cd /sys/fs`'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Absolute path means all the way from /, relative means from .",
+
+"message" : '''
+
+Nice! Check our prompt. You're in the same location you were before: `/sys/fs`.
+You just got here a different way -- using an ABSOLUTE PATH, typing it all out,
+all the way from the root directory, rather than with just a RELATIVE PATH, from
+the location you were currently in.
+
+  ''',
+  }
+
+  ]
+}

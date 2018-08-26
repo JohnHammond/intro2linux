@@ -1,0 +1,81 @@
+{
+  "name": "5. Paths and Files",
+  "concepts": [
+    {
+      "tag": "Let's start at the root directory.",
+      "message": "\n\rLet's start at the root directory. Please change directory there.\n\r\n\r",
+      "command_waiting": "cd /",
+      "incorrect": "Please run `cd /`."
+    },
+    {
+      "tag": "Get to a new folder with a relative path",
+      "message": "\n\rNow, let's move to `var/local`.\n\r\n\rNotice that simply because this does not start with a /, it is A RELATIVE PATH.\n\rI also specify that I want to go into another directory inside the 'var' directory.\n\rRemember that those forward slashes (when not at the very start!) represent another\n\rsub-level of folders.\n\r\n\r",
+      "command_waiting": "cd var/local",
+      "incorrect": "Use a relative path. Please run `cd var/local`."
+    },
+    {
+      "tag": "Reminder: `ls` to list stuff!",
+      "message": "\n\rNext, please run the command list all the files and folders in the current \n\rworking directory.\n\r\n\r",
+      "command_waiting": "ls",
+      "incorrect": "Do you remember how to List Stuff?"
+    },
+    {
+      "tag": "ls doesn't always show all files!",
+      "message": "\n\rThis directory is very likely empty, so you won't see any output.\n\r\n\rBut, interestingly enough, it does \"contain\" some \"special\" files and folders --\n\rthat just happent to be in every folder!\n\r\n\rTrust on me this one, and run `ls -a`\n\r\n\r",
+      "command_waiting": "ls -a",
+      "incorrect": "Run `ls -a`."
+    },
+    {
+      "tag": "`ls -a` lists ALL files and folders",
+      "message": "\n\rYou see a period, and another \"..\" two periods?\n\r\n\rSo, that `-a` argument to the `ls` command means to list ALL files and folders.\n\rIt will display two special symbols, just a period \".\" and two periods, \"..\"\n\r\n\rTry `cd .`\n\r\n\r",
+      "command_waiting": "cd .",
+      "incorrect": "Try `cd .`"
+    },
+    {
+      "tag": "The . period means the CURRENT DIRECTORY",
+      "message": "\n\rYour path should not have changed at all!\n\r\n\rThis is because the dot, a single period, \".\" is actually another symbol\n\rthat just means the CURRENT DIRECTORY YOU ARE WORKING IN.\n\r\n\rRun `ls` again with that argument to list ALL files and folders.\n\r\n\r",
+      "command_waiting": "ls -a",
+      "incorrect": "Remember that the `-a` argument to `ls` will list everything. Try it!"
+    },
+    {
+      "tag": "Reminder: ls -a will list ALL files and folders!",
+      "message": "\n\rSo we have covered the single dot, but what about the .. two dots? Try changing directory to that.\n\r\n\r",
+      "command_waiting": "cd ..",
+      "incorrect": "Change directory to that \"..\""
+    },
+    {
+      "tag": "The .. two periods means your PARENT directory.",
+      "message": "\n\rYou should have seen your prompt change this time! \n\r\n\rNow you should be in simply `/var`. Those .. two periods mean the PARENT DIRECTORY,\n\ror the one just above your current location!\n\r\n\rRun it one more time. `cd ..`\n\r\n\r",
+      "command_waiting": "cd ..",
+      "incorrect": "Run it one more time. `cd ..` "
+    },
+    {
+      "tag": "Reminder: the root directory is a forward slash!",
+      "message": "\n\rAnd now we are back at the root directory!\n\r\n\rTry the command now. Does `cd ..` change your path at all? Try it.\n\r",
+      "command_waiting": "cd ..",
+      "incorrect": "Run it one more time. `cd ..` "
+    },
+    {
+      "tag": "The root directory is the uppermost folder, so it has no parent!",
+      "message": "\n\rOf course not! \n\r\n\rThe root directory is the ROOT directory -- there is nothing above it, is has\n\rno PARENT directory. So, trying to cd to .. from / will just put you back at /.\n\r\n\rNow let's change back to our home directory. Remember, at this point, you know A LOT\n\rof different ways to do that:\n\r                  `cd /home/pi` ... when using an absolute path\n\r                  `cd home/pi` ... when using a relative path from here\n\r                  `cd ~`      ... when using that ~ as a special symbol\n\r                  `cd`      ... when not passing any arguments to `cd`.\n\r\n\rThe quickest one is the quickest one to type -- so let's run `cd` with no arguments.\n\r",
+      "command_waiting": "cd",
+      "incorrect": "Get back to your home directory with just the `cd` command."
+    },
+    {
+      "tag": "`ls -a` shows hidden files, too!",
+      "message": "\n\rLet's try that `ls` command now that we are in your home directory to see what\n\rfiles and folders you have to yourself.\n\r",
+      "command_waiting": "ls",
+      "incorrect": "Run `ls`."
+    },
+    {
+      "tag": "Hidden files in Linux start with a . at the beginning of their filename",
+      "message": "\n\rBut, is that ALL files and folders? You should know how to find out by now.\n\r",
+      "command_waiting": "ls -a",
+      "incorrect": "What argument can you pass to `ls` to show everything?\n\rIf you don't remember, ask around!"
+    },
+    {
+      "tag": "There are often many hidden files in your home directory",
+      "message": "\n\rRemember, you can scroll up and down with the keyboard via Shift + PageUp / PageDown.\n\r\n\rSee all those different files now? Those that start with a '.' were HIDDEN files in\n\rLinux! By default, `ls` will not show those hidden files. You have to use `ls -a` to\n\rbe able to see them! \n\r\n\rTo look more at what the `ls` command does, remember -- you can use the `man` command\n\rand pass `ls` as an argument to read more about it in its manual!\n\r"
+    }
+  ]
+}

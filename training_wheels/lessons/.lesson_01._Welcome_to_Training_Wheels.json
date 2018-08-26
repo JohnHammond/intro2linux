@@ -1,0 +1,46 @@
+{
+  "name": "1. Welcome to Training Wheels",
+  "concepts": [
+    {
+      "tag": "You use this by entering commands into what is called the 'shell'.",
+      "message": "\n\rHello!\n\r\n\rWelcome to the Intro to Linux 'Training Wheels' shell!\n\r\n\rThis tool is designed to help you learn about Linux and how to navigate a\n\rcommand-line interface. That's what you are using right now... a command-line!\n\r\n\rOften times it is called a 'shell', or a 'console', or a 'terminal'... \n\rit has many names. But, the jist of it is, the way that you interact with \n\rit is by you entering 'commands' and having it do things.\n\r\n\rDo you understand that? \n\r\n\r",
+      "command_waiting": "yes",
+      "incorrect": "Please say `yes` if you are ready to move on.",
+      "in_between_text": "Oh no! You entered a special command!\n\rPress Control + C at the same time to stop it!\n\r"
+    },
+    {
+      "tag": "Introduction to Standard Streams",
+      "message": "\n\r\n\rWOAH! \n\r\n\rThat was crazy! \n\r\n\rDid you see what happened?\n\r\n\rI'm letting you live entirely inside the shell, so all you can really enter\n\rare commands, whether they work or not. Check it out:\n\r\n\rYou entered the `yes` command, and -- believe it or not -- that really is a \n\rcommand!\n\r\n\rIt repeatedly sends the letter 'y' to standard output.\n\r\n\rStandard output is one of the three \"streams\" that are SUPER important when \n\rworking with the Linux shell. \n\r\n\r(1) There is standard output... like everything you are seeing right now, the \n\rthings that are printed out on the screen by certain programs or commands. \n\r\n\r(2) There is standard input, like how you just entered that command with the\n\rkeyboard, or how you use a mouse to interact with your computer.\n\r\n\r(3) And there is standard error, which gets displayed like standard output, \n\rbut is reserved for error messages or when things go wrong with a program.\n\r\n\rDoes that all make sense to you?\n\r\n\r",
+      "command_waiting": "yes",
+      "incorrect": "If you need more clarification, ask around or Google it!.\n\rPlease enter `yes` when you are ready to move on."
+    },
+    {
+      "tag": "A Demonstration of Standard Error",
+      "message": "\n\rAnd it looks like you have figured out that Control + C will break out of a \n\rrunning program, or stop it from running inside your shell. Awesome!\n\r\n\rSo, funnily enough, there may be a `yes` command, but there actually is not a\n\r`no` command. Try entering \"no\" and see what happens!\n\r\n\r",
+      "command_waiting": "no",
+      "incorrect": "Try and enter \"no\" as a command, and see what happens."
+    },
+    {
+      "tag": "Introduction to the Echo command",
+      "message": "\n\rCheck out how the shell told you that wasn't a real command. It printed out\n\rthe error message on the screen... but it was on the standard error stream!\n\r\n\rThe command `echo` will let you work with standard OUTPUT. Try entering \"echo\"!\n\r\n\r",
+      "command_waiting": "echo",
+      "incorrect": "Enter just the `echo` command."
+    },
+    {
+      "tag": "Commands have arguments that you separate with spaces",
+      "message": "\n\rHmm... nothing happened! \n\r\n\rThe `echo` command didn't do anything!\n\r\n\rWhy not? Well, we didn't give it any arguments!\n\r\n\rThe very first thing you type into the shell is the \"command\". Anything that\n\rfollows is considered an \"argument\", or a \"parameter\", that you pass to the\n\rcommand. \n\r\n\rTry entering something like \"echo hello\" or \"echo USCGA\".\n\r\n\r",
+      "command_waiting": "echo ???",
+      "incorrect": "Try running the `echo` command with just one argument!"
+    },
+    {
+      "tag": "The `yes` command takes arguments, as well",
+      "message": "\n\rNice! See how it \"echo-ed out\" the argument you passed to it? It just sent it\n\rto the standard output. That is really all the `echo` command does, it just\n\rputs whatever you give it as arguments out onto stdout. \n\r\n\rThe `yes` command that we saw earlier also takes an argument. Give it just one!\n\r\n\r",
+      "command_waiting": "yes ???",
+      "incorrect": "Give the `yes` command just one argument and see what happens."
+    },
+    {
+      "tag": "Arguments with spaces in them can be wrapped in quotes.",
+      "message": "\n\rAwesome! See how the `yes` command printed out the argument over and over again,\n\rrather than just the letter `y`? When you pass arguments to a program, you\n\rchange how the program behaves when it executes.\n\r\n\rKeep in mind that arguments are separated by spaces. The very first thing you\n\rtype in into the shell is your command, and then everything following the \n\rfirst space is an argument.\n\r\n\r"
+    }
+  ]
+}

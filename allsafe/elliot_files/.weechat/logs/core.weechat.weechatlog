@@ -1,0 +1,69 @@
+2016-08-19 12:44:53		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, javascript, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-19 12:45:10		[irc]  /server  list|listfull [<server>]
+2016-08-19 12:45:10		                add <server> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2016-08-19 12:45:10		                copy|rename <server> <new_name>
+2016-08-19 12:45:10		                reorder <server> [<server>...]
+2016-08-19 12:45:10		                del|keep <server>
+2016-08-19 12:45:10		                deloutq|jump|raw
+2016-08-19 12:45:10		list, add or remove IRC servers
+2016-08-19 12:45:10		    list: list servers (without argument, this list is displayed)
+2016-08-19 12:45:10		listfull: list servers with detailed info for each server
+2016-08-19 12:45:10		     add: add a new server
+2016-08-19 12:45:10		  server: server name, for internal and display use
+2016-08-19 12:45:10		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2016-08-19 12:45:10		    temp: add a temporary server (not saved)
+2016-08-19 12:45:10		  option: set option for server (for boolean option, value can be omitted)
+2016-08-19 12:45:10		nooption: set boolean option to 'off' (for example: -nossl)
+2016-08-19 12:45:10		    copy: duplicate a server
+2016-08-19 12:45:10		  rename: rename a server
+2016-08-19 12:45:10		 reorder: reorder list of servers
+2016-08-19 12:45:10		    keep: keep server in config file (for temporary servers only)
+2016-08-19 12:45:10		     del: delete a server
+2016-08-19 12:45:10		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2016-08-19 12:45:10		    jump: jump to server buffer
+2016-08-19 12:45:10		     raw: open buffer with raw IRC data
+2016-08-19 12:45:10		Examples:
+2016-08-19 12:45:10		  /server listfull
+2016-08-19 12:45:10		  /server add freenode chat.freenode.net
+2016-08-19 12:45:10		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2016-08-19 12:45:10		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2016-08-19 12:45:10		  /server copy freenode freenode-test
+2016-08-19 12:45:10		  /server rename freenode-test freenode2
+2016-08-19 12:45:10		  /server reorder freenode2 freenode
+2016-08-19 12:45:10		  /server del freenode
+2016-08-19 12:45:10		  /server deloutq
+2016-08-19 12:45:38		No server
+2016-08-19 12:45:46		irc: server freenode added
+2016-08-19 12:45:51		All servers:
+2016-08-19 12:45:51		   freenode
+2016-08-19 12:45:59	=!=	Error with command "/server freenode" (help on command: /help server)
+2016-08-19 12:46:05		[irc]  /connect  <server> [<server>...] [-<option>[=<value>]] [-no<option>] [-nojoin] [-switch]
+2016-08-19 12:46:05		                 -all|-auto|-open [-nojoin] [-switch]
+2016-08-19 12:46:05		connect to IRC server(s)
+2016-08-19 12:46:05		    server: server name, which can be:
+2016-08-19 12:46:05		            - internal server name (added by /server add, recommended usage)
+2016-08-19 12:46:05		            - hostname/port or IP/port, port is 6667 by default
+2016-08-19 12:46:05		            - URL with format: irc[6][s]://[nickname[:password]@]irc.example.org[:port][/#channel1][,#channel2[...]]
+2016-08-19 12:46:05		            Note: for an address/IP/URL, a temporary server is added (NOT SAVED), see /help irc.look.temporary_servers
+2016-08-19 12:46:05		    option: set option for server (for boolean option, value can be omitted)
+2016-08-19 12:46:05		  nooption: set boolean option to 'off' (for example: -nossl)
+2016-08-19 12:46:05		      -all: connect to all servers defined in configuration
+2016-08-19 12:46:05		     -auto: connect to servers with autoconnect enabled
+2016-08-19 12:46:05		     -open: connect to all opened servers that are not currently connected
+2016-08-19 12:46:05		   -nojoin: do not join any channel (even if autojoin is enabled on server)
+2016-08-19 12:46:05		   -switch: switch to next server address
+2016-08-19 12:46:05		To disconnect from a server or stop any connection attempt, use command /disconnect.
+2016-08-19 12:46:05		Examples:
+2016-08-19 12:46:05		  /connect freenode
+2016-08-19 12:46:05		  /connect irc.oftc.net/6667
+2016-08-19 12:46:05		  /connect irc6.oftc.net/6667 -ipv6
+2016-08-19 12:46:05		  /connect irc6.oftc.net/6697 -ipv6 -ssl
+2016-08-19 12:46:05		  /connect my.server.org/6697 -ssl -password=test
+2016-08-19 12:46:05		  /connect irc://nick@irc.oftc.net/#channel
+2016-08-19 12:46:05		  /connect -switch
+2016-08-19 12:47:26	=!=	Error: unknown command "/commect" (type /help for help)
+2016-08-19 12:47:44	=!=	irc: unable to add temporary server "irc.freenode.irc" because the addition of temporary servers with command /connect is currently disabled
+2016-08-19 12:47:44	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-08-19 12:47:48	=!=	irc: unable to add temporary server "irc.freenode.net" because the addition of temporary servers with command /connect is currently disabled
+2016-08-19 12:47:48	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-08-19 12:47:54	=!=	No help available, "?" is not a command or an option

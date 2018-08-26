@@ -1,0 +1,39 @@
+{
+	"app_title" : "Scripting Playground",
+
+	"app_navigation_logged_out": {		
+		"About": "/about",
+		"Scoreboard": "/scoreboard",
+		"Login": "/login",
+		"Register": "/register" },
+
+	"app_navigation_logged_in": {
+
+		"Submit a Flag": "/challenges",
+		"About": "/about",
+		"Scoreboard": "/scoreboard",
+		"Log Out": "/logout"
+	},
+
+	"app_about": "
+		<p>
+		The idea behind this Scripting Playground is to use <code>git</code> as a vessel to teach <code>bash</cody> scripting. In some commits, there is an executable file, that once run, will yield a flag based off of the current time. The goal is to write a script that will run through each commit, run each program, and submit each flag -- each minute.
+		</p>
+		<p>
+		This could be done by hand of course, but it would be tedious and not very fruitful in regard to the game. So, the more you can script, the more you win!
+		</p>
+		<h2>Good luck and have fun!</h2>
+	",
+
+	"services": [
+		{ 
+			"title": "<a href='https://github.com/JohnHammond/scripting_playground'>A New github Repository</a>",
+			"description": "
+				This repository contains an executable that will give you a flag. 
+				In each commit there is another executable, and even the commit SHA1 hashes themselves
+				are flags you can submit for points.
+			",
+			"points" : 10
+		}
+	]
+}

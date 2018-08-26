@@ -1,0 +1,21 @@
+{% extends "base_page.html" %}
+{% block content %}
+
+	<h2> Register </h2>
+
+	<p>
+		Please register the username and password you would like to log in with.
+	</p>
+	<p>
+		<strong> Do not use a password you use for other webites.</strong> Your password is stored in the database as a <a href="https://en.wikipedia.org/wiki/SHA-2">SHA256 hash</a>, and it is still passed to the server over a secure <a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a> connection, but the next line of defense is for you, the user, to never use synchronized passwords. 
+	</p>
+	<br>
+
+	<form id="register_form" action="{{ url_for('register') }}" method="post">
+		<strong>Username:</strong> <input type="text" name="username">
+		<strong>Password:</strong> <input type="password" name="password">
+		<strong>Confirm Password:</strong> <input type="password" name="confirm">
+		<input type="submit" value="Register">
+	</form>
+
+{% endblock %}

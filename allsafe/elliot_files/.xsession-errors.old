@@ -1,0 +1,21 @@
+openConnection: connect: No such file or directory
+cannot connect to brltty at :0
+upstart: update-notifier-crash (/var/crash/_usr_bin_sudo.0.crash) main process (2072) terminated with status 1
+upstart: indicator-application pre-stop process (2863) killed by TERM signal
+upstart: bamfdaemon main process (2089) killed by TERM signal
+upstart: hud main process (2184) killed by HUP signal
+upstart: unity-settings-daemon main process (2186) killed by HUP signal
+upstart: gnome-session (Unity) main process (2195) killed by HUP signal
+upstart: unity-panel-service main process (2199) killed by HUP signal
+upstart: indicator-messages main process (2243) killed by HUP signal
+upstart: indicator-bluetooth main process (2244) killed by TERM signal
+upstart: indicator-power main process (2254) killed by TERM signal
+upstart: indicator-datetime main process (2255) killed by TERM signal
+upstart: indicator-keyboard main process (2257) killed by HUP signal
+upstart: indicator-sound main process (2258) killed by HUP signal
+upstart: indicator-printers main process (2264) killed by TERM signal
+upstart: indicator-session main process (2265) killed by TERM signal
+upstart: indicator-application main process (2269) killed by TERM signal
+upstart: gnome-session (Unity) pre-stop process (2864) killed by TERM signal
+upstart: unity7 main process (2192) terminated with status 1
+upstart: Disconnected from notified D-Bus bus

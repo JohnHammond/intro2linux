@@ -1,0 +1,45 @@
+[2016-08-19 12:44:52] WeeChat 1.4 (compiled on Mar 14 2016 07:45:29)
+[2016-08-19 12:44:52] Writing configuration file sec.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file sec.conf
+[2016-08-19 12:44:52] Writing configuration file weechat.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file weechat.conf
+[2016-08-19 12:44:52] Writing configuration file plugins.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file plugins.conf
+[2016-08-19 12:44:52] Writing configuration file charset.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file charset.conf
+[2016-08-19 12:44:52] Writing configuration file logger.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file logger.conf
+[2016-08-19 12:44:52] Writing configuration file exec.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file exec.conf
+[2016-08-19 12:44:52] Writing configuration file trigger.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file trigger.conf
+[2016-08-19 12:44:52] Writing configuration file aspell.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file aspell.conf
+[2016-08-19 12:44:52] Writing configuration file alias.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file alias.conf
+[2016-08-19 12:44:52] Writing configuration file xfer.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file xfer.conf
+[2016-08-19 12:44:52] Writing configuration file irc.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file irc.conf
+[2016-08-19 12:44:52] Writing configuration file relay.conf (default options)
+[2016-08-19 12:44:52] Reading configuration file relay.conf
+[2016-08-19 12:44:53] Writing configuration file script.conf (default options)
+[2016-08-19 12:44:53] Reading configuration file script.conf
+[2016-08-19 12:47:30] irc: connecting to server chat.freenode.net/6667...
+[2016-08-19 12:47:41] irc: connecting to server chat.freenode.net/6667...
+[2016-08-19 12:48:02] irc: connecting to server chat.freenode.net/6667...
+[2016-08-19 12:48:43] irc: connecting to server chat.freenode.net/6667...
+[2016-08-19 12:49:36] Signal SIGHUP received, exiting WeeChat...
+[2016-08-19 12:49:36] Writing configuration file plugins.conf
+[2016-08-19 12:49:36] Writing configuration file trigger.conf
+[2016-08-19 12:49:36] Writing configuration file exec.conf
+[2016-08-19 12:49:36] Writing configuration file logger.conf
+[2016-08-19 12:49:36] Writing configuration file relay.conf
+[2016-08-19 12:49:36] Writing configuration file aspell.conf
+[2016-08-19 12:49:36] Writing configuration file irc.conf
+[2016-08-19 12:49:36] Writing configuration file charset.conf
+[2016-08-19 12:49:36] Writing configuration file alias.conf
+[2016-08-19 12:49:36] Writing configuration file script.conf
+[2016-08-19 12:49:36] Writing configuration file xfer.conf
+[2016-08-19 12:49:36] Writing configuration file weechat.conf
+[2016-08-19 12:49:36] Writing configuration file sec.conf

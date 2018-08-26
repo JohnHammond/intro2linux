@@ -1,0 +1,46 @@
+{% extends "base_page.html" %}
+{% block content %}
+
+	<h2> Tasks </h2>
+
+	{% if challenges %}
+		<div id="challenges">
+			{% for challenge in challenges %}
+				<div class="challenge" id="{{ challenge.id }}">
+
+					<h3 class="challenge_title"> {{ challenge.title | safe }} <span>{{ challenge.points }}</span></h3>
+
+					<form action="{{ url_for('challenges_page') }}" id="challenge_body" method="post">
+						<p>
+							{{ challenge.prompt | safe }}
+						</p>
+						{% if challenge.downloadable_files %}
+							<ul>
+								{% for downloadable_file in challenge.downloadable_files %}
+									<li> <a href="{{ url_for('static', filename='downloads/' + downloadable_file )}}"> {{ downloadable_file }}</a></li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+
+						<input type="hidden" name="challenge_id" value="{{ challenge.id }}">
+						<input type="text" name="answer">
+						<input type="submit" value="Submit" onclick="return check_answer({{challenge.id}})">
+					</form>
+				</div>
+
+			{% endfor %}
+		</div>
+	{% endif %}
+
+
+	<script>
+		var solved_challenges = "{{session.solved_challenges}}".split(" ").slice(1);
+		
+		solved_challenges.forEach( function(challenge_id, index, array){
+			
+			correct_challenge( challenge_id );
+			$("#" + challenge_id + " form").hide();
+		} );
+	</script>
+
+{% endblock %}

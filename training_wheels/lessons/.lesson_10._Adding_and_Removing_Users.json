@@ -1,0 +1,75 @@
+{
+  "name": "10. Adding and Removing Users",
+  "concepts": [
+    {
+      "tag": "To add a user, use the `useradd` command.",
+      "message": "\n\rNow that have you learned a little more about users, let's create one for ourselves.\n\r\n\rTo do this in Linux, you can use the command `useradd`. Check out the man page, peruse\n\rfor a little bit, and then scroll back down when you are ready to move on. \n\r",
+      "command_waiting": "man useradd",
+      "incorrect": "Check out the man page for the `useradd` command."
+    },
+    {
+      "tag": "useradd can take just one argument, or you can supply other arguments.",
+      "message": "\n\rNotice that you can specify all the info you want for the user (things like the\n\rhome directory, the groups it belongs to, the user ID, and more) with arguments --\n\rwe will have to do this for it to create the home directory and specify the user's shell.\n\r\n\rIf you look at the arguments, you see that `-m` will \"make\" the user's home directory\n\r(in /home/<USERNAME> by default, the proper place), and we can specify the shell with\n\rthe `-s` argument. We'll use the absolute path to the `bash` binary, like the other users.\n\r\n\rLet's run this: `useradd testuser -m -s \"/bin/bash\"`\n\r",
+      "command_waiting": "useradd testuser -m -s \"/bin/bash\"",
+      "incorrect": "Let's run this: useradd testuser -m -s \"/bin/bash\"`"
+    },
+    {
+      "tag": "useradd must be run as root",
+      "message": "\n\rOh? Permission denied?\n\r\n\rRemember that regular users do not have the privilege to create other users.\n\rOnly root can do that. So, let's run the same command again... just as root!\n\r",
+      "command_waiting": "sudo useradd testuser -m -s \"/bin/bash\"",
+      "incorrect": "Just tack on the \"sudo\" prefix: `sudo useradd testuser -m -s \"/bin/bash\"`"
+    },
+    {
+      "tag": "useradd displays no output.",
+      "message": "\n\rHmmm... no output. Did it work?\n\r\n\rLet's list the stuff in the `/home` directory to see if it created a home directory.\n\r(Do this with just one command, by passing the path as an argument to `ls`).\n\r",
+      "command_waiting": "ls /home",
+      "incorrect": "You want to run `ls /home`"
+    },
+    {
+      "tag": "But it does create the user",
+      "message": "\n\rYup, I see the account has a home directory created. Is it in /etc/passwd? \n\rLet's take a look at the file.\n\r",
+      "command_waiting": "cat /etc/passwd",
+      "incorrect": "Display the contents of the `/etc/passwd` file with `cat /etc/passwd`"
+    },
+    {
+      "tag": "But it does create the user",
+      "message": "\n\rYup! The account is there right at the bottom. So it looks like it really did \n\rcreate the account. \n\r\n\rHere's an interesting thing; that `sudo` command you learned about earlier? \n\rYou can use that to run a command by a user other than root, if you wanted to.\n\r\n\rIf you supply another argument -- the user to run the command as -- you can\n\rtemporarily switch to that account (just like when you use it to get root's powers).\n\r\n\rYou have to specify the user with the `-u` argument. Try this: `sudo -u testuser whoami`\n\r",
+      "command_waiting": "sudo -u testuser whoami",
+      "incorrect": "Try this: `sudo -u testuser whoami`"
+    },
+    {
+      "tag": "Sudo can be used to run commands as other users, too",
+      "message": "\n\rNormally the `whoami` command would tell us who we are currently logged into, right?\n\rIt should tell us `pi`, but instead, since we ran it as the `testuser` -- \n\rwe are the `testuser`!\n\r\n\rNote that the way that this works is that you initially take the powers of root, and \n\rthen run the command as the `testuser` account. Since `pi` doesn't have the privilege\n\rto do things as other users (but obviously the superuser does), you become root first,\n\rand then you become the `testuser`.\n\r\n\rOkay, that's enough testing -- we can delete that user with the `userdel` command.\n\rAgain, just pass the username as an argument. \n\r",
+      "command_waiting": "sudo userdel testuser",
+      "incorrect": "Don't forget to run it as root! `sudo userdel testuser`"
+    },
+    {
+      "tag": "Delete a user with `userdel`.... again, no output",
+      "message": "\n\rNo output again. Let's check the `/home` directory to see if Linux removed the\n\ruser's home directory for us. (again, please just pass the path as an argument)\n\r",
+      "command_waiting": "ls /home",
+      "incorrect": "Use `ls /home` for Training Wheels to move on. \n\rYou don't need to run this as root."
+    },
+    {
+      "tag": "The user is deleted, but the home directory is still there",
+      "message": "\n\rHmmm... the directory is still there! But does the user still exist?\n\rLet's check the `/etc/passwd` file again.\n\r",
+      "command_waiting": "cat /etc/passwd",
+      "incorrect": "You don't need to run this as root... just `cat /etc/passwd`"
+    },
+    {
+      "tag": "We have to remove the home directory ourselves.",
+      "message": "\n\rWell, the entry for the user is gone in there... but I guess Linux didn't\n\rclean up the directory for us. That's okay; we can do it ourselves.\n\r\n\rWe don't have the file permissions to work with it as the `pi` user, though,\n\rright? We'll have to do it as root. \n\r\n\rSince the directory is filled with some starting folders for the user, we can't use\n\rthe `rmdir` command -- the directory is not empty. Instead, we'll pass the `-r`\n\rargument to the `rm` command to recursively move everything in that directory.\n\r\n\rBE CAREFUL WITH THIS. When you remove things as root, you run the risk of \n\rACCIDENTALLY DELETING THINGS YOU DID NOT INTEND ON DELETING. Since root has\n\rcomplete control over the whole Linux computer, you could seriously delete\n\reverything with one simple command if you weren't careful.\n\r\n\rWe want to run: `sudo rm -r /home/testuser`\n\r",
+      "command_waiting": "sudo rm -r /home/testuser",
+      "incorrect": "Please run just `sudo rm -r /home/testuser`"
+    },
+    {
+      "tag": "Always verify changes you make to the file system",
+      "message": "\n\rNo output. The directory should be gone. Let's just check with the usual `ls /home`.\n\r\n\r",
+      "command_waiting": "ls /home",
+      "incorrect": "Please run `ls /home` one last time."
+    },
+    {
+      "tag": "Outside of Training Wheels, try the `adduser` command",
+      "message": "\n\rAwesome, the testuser's home directory is finally gone.\n\r\n\rNotice we didn't set a password for the `testuser` account. \n\r\n\rWe could do this with the `passwd` command. If you don't supply any arguments, it\n\rwill by default try and change the password of the current user. If you supply\n\ran argument of the username, you can change the password for that specific user.\n\r\n\rHere's the catch; this command won't work inside Training Wheels. \n\rIt does some funky line buffering, so once you enter a password, it doesn't take.\n\r\n\rAnother interesting thing is that there is a command `adduser`...\n\rIN CONTRAST to `useradd`, that needs no special arguments to denote the user's\n\rhome directory or login shell. It sorts it all out for you -- it will even prompt\n\ryou for a password to set. \n\r\n\rHowever -- this command does the same line-buffering as the `passwd` command.\n\rSo it will not work in Training Wheels. \n\r\n\rI recommend, however, you create a new `guest` account outside of the Training\n\rWheels with the `adduser` command. Go explore!\n\r\n\r"
+    }
+  ]
+}

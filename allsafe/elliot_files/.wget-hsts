@@ -1,0 +1,5 @@
+# HSTS 1.0 Known Hosts database for GNU Wget.
+# Edit at your own risk.
+# <hostname>[:<port>]	<incl. subdomains>	<created>	<max-age>
+icec.tf	0	0	1471032056	63072000
+play.icec.tf	0	0	1471018183	63072000

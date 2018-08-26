@@ -1,0 +1,717 @@
+{
+
+  "name" : "7. Working with Files",
+
+# ==============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "Let's start at the temporary directory",
+
+"message" : '''
+
+Let's start to work with some files. Please move to the temporary directory so
+we have a place to work.
+
+
+  ''',
+
+"command_waiting" : "cd /tmp",
+
+"incorrect" : "Do you remember how to `cd` to the temp directory? Absolute paths, please!",
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Create a directory with `mkdir`",
+
+"message" : '''
+
+We should create a folder for ourselves to work in. You can do that from the
+command-line with the command `mkdir`. Try it without any arguments!
+
+
+  ''',
+
+"command_waiting" : "mkdir",
+
+"incorrect" : '''Run just `mkdir`. No arguments.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "`mkdir` takes the directory name as an argument.",
+
+"message" : '''
+
+You should be able to figure out by that error message that `mkdir` needs an
+argument to be able to "Make a Directory". Check out what other arguments it
+can handle by reading its manpage.
+
+
+  ''',
+
+"command_waiting" : "man mkdir",
+
+"incorrect" : '''Check out the man page for `mkdir`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Let's create a folder named 'workspace'.",
+
+"message" : '''
+
+Now let's make a folder for us to work in. You can of course name the folder
+whatever you would like, but for the sake of Training Wheels please give your
+folder the name: workspace.
+
+
+  ''',
+
+"command_waiting" : "mkdir workspace",
+
+"incorrect" : '''Pass workspace as an argument to mkdir to create the folder.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "cd into that directory",
+
+"message" : '''
+
+cd into that new directory, please.
+
+
+  ''',
+
+"command_waiting" : "cd workspace",
+
+"incorrect" : '''cd into your new workspace. Relative path, please!'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The directory should be empty since you just created it.",
+
+"message" : '''
+
+This folder should be empty, since you just created it. Just for good measure
+(and to keep you practicing the commands), list stuff in the directory.
+
+
+  ''',
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''Please run the command to list stuff in this directory. No arguments needed!'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Reminder: you can use echo to display to standard output.",
+
+"message" : '''
+
+Good, the directory should be empty. Let's create a file with some standard
+output redirection. Remember the echo command? It displays things on standard
+output, or it prints them out to your terminal display.
+
+Just to refresh your memory, run `echo hello`. 
+
+
+  ''',
+
+  "command_waiting" : "echo hello",
+
+  "incorrect" : '''Run `echo hello`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "We can redirect the echoed output to a file!",
+
+"message" : '''
+
+Easy, right? You saw the string `hello` in standard output. Now, to touch
+upon redirection, you can use the > operator to redirect standard output 
+to something else... like a file!
+
+This is easier for you to see once you go through with it rather than reading
+about it, so let's try it. 
+
+Run `echo hello > myfile.txt`
+
+
+  ''',
+
+  "command_waiting" : "echo hello > myfile.txt",
+
+  "incorrect" : '''Please run `echo hello > myfile.txt`. 
+  Unfortunately, Training Wheels is case-sensitive and cares about the spaces, too.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Reminder: ls to see your files.",
+
+"message" : '''
+
+Nice! Now, list stuff.
+
+
+  ''',
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''List stuff in the current directory (no arguments needed).'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You should be able to see your file and work with it!",
+
+"message" : '''
+
+See the file, `myfile.txt`? That's what you just created! What you echoed
+out, the string "hello" got redirected into the file! Check it out, run
+`cat myfile.txt` to display the contents of the file.
+
+
+  ''',
+
+  "command_waiting" : "cat myfile.txt",
+
+  "incorrect" : '''Display the myfile.txt file with cat.'''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Don't forget that files are case-sensitive in Linux!",
+
+"message" : '''
+
+Sweet! You saw the string `hello` that you echoed into the file. That's 
+a quick and easy way to put contents into a file from the command-line, without
+invoking a text-editor like `nano`. Unfortunately, Training Wheels can't handle
+`nano`, which is why I am having you create files like this.
+
+Don't forget that all files in Linux are case-sensitive. `myfile.txt` is not
+the same as `myfile.TXT`. Try to display that one, try to cat myfile.TXT! 
+
+
+  ''',
+
+  "command_waiting" : "cat myfile.TXT",
+
+  "incorrect" : '''Run `cat myfile.TXT` (note the capital TXT)'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "But we can rename our files, if we need to!",
+
+"message" : '''
+
+cat should give you an error, telling you that file does not exist.
+
+But, if we wanted to, we could rename the current file, so it would exist!
+
+In Linux, we can rename a file by "moving" the file to a new name. 
+The command to move a file in Linux is `mv`. 
+
+Try running `mv myfile.txt myfile.TXT`
+
+
+  ''',
+
+  "command_waiting" : "mv myfile.txt myfile.TXT",
+
+  "incorrect" : '''Try running `mv myfile.txt myfile.TXT`.
+  Note the difference in the capitalization!!'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Use ls often to see your directory changing",
+
+"message" : '''
+
+And `ls` to see the changes?
+
+
+  ''',
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''Run `ls` to see the changes in the directory.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "We can cat the file that has a new name just as easily as before!",
+
+"message" : '''
+
+This is the same file as before, it has just been renamed, right? Let's check
+out the contents. Please try and cat out that new file. 
+
+
+  ''',
+
+  "command_waiting" : "cat myfile.TXT",
+
+  "incorrect" : '''Run `cat` with the new file as an argument to display it.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The file contents should still be the same, since just moved the file",
+
+"message" : '''
+
+You should see "hello", since the file contents have not changed -- just the filename.
+
+We can, of course, actually move this file to a completely different directory.
+Try moving it to the parent directory!
+
+
+  ''',
+
+  "command_waiting" : "mv myfile.TXT ..",
+
+  "incorrect" : '''Do you remember the symbols for the parent directory? 
+If not, that's okay -- ask around!
+  '''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You can always verify your changes when you work with the file system",
+
+"message" : '''
+
+Now let's get back to that directory to see that it is really there.
+Change directory to the parent directory!
+
+
+  ''',
+
+  "command_waiting" : "cd ..",
+
+  "incorrect" : '''`cd` to the parent directory (you just used the symbol!)'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Keep listing the files to be aware of what you are working with",
+
+"message" : '''
+
+`ls` one more time?
+
+
+  ''',
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''Please run `ls` one more time.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You can remove directories with the `rmdir` command.",
+
+"message" : '''
+
+Nice. Hopefully you see your file, `myfile.TXT`. 
+
+Let's try and clean up. From here, you should also be able to see your
+`workspace` directory. We can remove that folder with the `rmdir` command.
+
+Try it!
+
+
+  ''',
+
+  "command_waiting" : "rmdir workspace",
+
+  "incorrect" : '''Remove the workspace directory.
+  If you need help with syntax, check out the manpage!'''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "rmdir doesn't display any output, so check with ls, as usual",
+
+"message" : '''
+
+`rmdir` doesn't display any output, so to verify your changes, `ls` again.
+
+
+  '''
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''`ls` again to verify your changes.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Create a new directory with `mkdir` again",
+
+"message" : '''
+
+Your folder should be gone. Let's create a new one again, so you get used
+to the syntax. Create a new directory with the name: library.
+
+
+  '''
+
+  "command_waiting" : "mkdir library",
+
+  "incorrect" : '''Please create a directory with the name: library'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You can copy files with the `cp` command",
+
+"message" : '''
+
+Nice. Now, let's COPY our `myfile.TXT` into that new folder. 
+The command to copy files in Linux is simply `cp`. It takes two arguments,
+a source and destination, just like the `mv` command. 
+
+Experiment with it a little bit -- try to copy the myfile.TXT file into your new folder!
+
+
+  '''
+
+  "command_waiting" : "cp myfile.TXT library",
+
+  "incorrect" : '''You want to `cp` the file `myfile.TXT` into the directory `library`!'''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Double check your changes as always",
+
+"message" : '''
+
+Cool. Let's verify that the file is in the new directory WITHOUT ACTUALLY
+CHANGING INTO THAT DIRECTORY. We can use the `ls` command as usual, but this
+time, just pass it in argument of WHERE you want to list stuff.
+
+
+  '''
+
+  "command_waiting" : "ls library",
+
+  "incorrect" : '''You want to list stuff in the `library` folder, right?
+  Pass that as an argument to the `ls` command!'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "cat the file to make sure that it is the copy we want.",
+
+"message" : '''
+
+We see the file, but does it contain the contents that it should? 
+WITHOUT CHANGING DIRECTORIES, try and cat out the `myfile.TXT` that is
+inside the `library` folder!
+
+
+  '''
+
+  "command_waiting" : "cat library/myfile.TXT",
+
+  "incorrect" : '''Right now, the `library` folder acts just like a relative
+  path, right? And you can specify files in that directory by following the
+  directory name with a forward slash (/) and the filename you want.
+
+  If you still can't get it, ask for help!!'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "rmdir on folders that have files in them works differently...",
+
+"message" : '''
+
+Okay, so our file was successfully copied! 
+
+Well that was good practice, but now we don't need that `library` folder 
+anymore. Go ahead and remove it!
+
+
+  '''
+
+  "command_waiting" : "rmdir library",
+
+  "incorrect" : '''Try and remove the directory `library`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You cannot remove directories with `rmdir` that are not empty!",
+
+"message" : '''
+
+Oh woah! `rmdir` spat out an error!
+
+It said the "directory is not empty"... well, we cannot remove a directory
+with the `rmdir` command if the directory still has files in it!
+
+Let's `cd` over to that `library` directory and try and remove the file.
+
+
+  '''
+
+  "command_waiting" : "cd library",
+
+  "incorrect" : '''Change directory into the `library` folder.'''
+
+  },
+
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You can remove files with the `rm` command.",
+
+"message" : '''
+
+We remove files in Linux with a similar syntax to how we remove directories,
+just without the `dir` suffix. The command is `rm`. It takes the files you want
+to remove as arguments.
+
+So let's remove that `myfile.TXT` file.
+
+
+  '''
+
+  "command_waiting" : "rm myfile.TXT",
+
+  "incorrect" : '''You want to `rm` the `myfile.TXT` file.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Go back and clean up.",
+
+"message" : '''
+
+Now let's go back up to our parent directory, and then remove the `library` folder that we are currently in, just to really clean up.
+
+
+  '''
+
+  "command_waiting" : "cd ..",
+
+  "incorrect" : '''cd back up to our parent directory.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Remove the unnecessary directory now.",
+
+"message" : '''
+
+Remove the `library` directory,
+
+
+  '''
+
+  "command_waiting" : "rmdir library",
+
+  "incorrect" : '''Remove the library directory. Remember it is a directory,
+  not a file!'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Remove the old file, too.",
+
+"message" : '''
+
+And lets remove that old `myfile.TXT` that is in the current directory, too.
+
+
+  '''
+
+  "command_waiting" : "rm myfile.TXT",
+
+  "incorrect" : '''Remove the `myfile.TXT` file. '''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Review the commands we've used...",
+
+"message" : '''
+
+Nice! Let's think back on some of the commands we started to use.
+
+  mkdir <FOLDER_NAME>             to make a new directory
+  mv <SRC> <DEST>                 to move a file from once place to another
+  rmdir <FOLDER_NAME>             to remove an EMPTY directory
+  cp <SRC> <DEST>                 to copy a file from once place to another
+  rm <FILE_NAME>                  to remove a file
+
+When you're ready to be done with this lesson, enter `cd` to change
+back into your home directory.
+
+
+  '''
+
+  "command_waiting" : "cd",
+
+  "incorrect" : '''When you're ready to be done with this lesson, enter 
+`cd` to change back into your home directory. '''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Conclusion spiel",
+
+"message" : '''
+
+So this was a super basic introduction to the simple commands to copy, move,
+delete files and create and remove directories in Linux. The more interesting
+stuff comes in when you look at the arguments that each command can take.
+
+To look into what more you can do with these simple commands, you could always
+look at their man pages (`man cp`, `man mv`, `man rm`, etc..)...
+
+But what I really recommend doing is just lightly reading through Chapter 9
+of the "Linux Fundamentals" PDF file. Now that you have used these commands
+a bit and have been introduced to them, glancing at that Linux Fundamentals
+book should be very easy for you.
+
+The book is included in the `linux_16` repository, under the `resources`
+directory.
+
+We'll be using these commands to work with files more and more, so getting
+used to their syntax and knowing some of the arguments they can take is
+will greatly benefit you if you plan on doing more with Linux.
+
+If you have not already figured it out, being able to quickly navigate 
+around the command-line is crucial to working with the Linux shell.
+
+
+  '''
+
+  }
+
+  ]
+}

@@ -1,0 +1,19 @@
+ls
+whoami
+cd
+id
+man gpg
+clear
+cd /usr/bin
+ls
+ls | grep "txt"
+cat elliot.txt
+cd
+ls -a
+exit
+ls
+nano passwords.txt
+rm passwords.txt
+nano credentials_for_angela.txt
+mv credentials_for_angela.txt /tmp/nov22/
+curl http://10.6.1.155/robots.txt

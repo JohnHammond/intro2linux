@@ -1,0 +1,356 @@
+{
+	"app_title" : "Linux Filter Fundamentals",
+
+	"app_navigation_logged_out": {		
+		"About": "/about",
+		"Scoreboard": "/scoreboard",
+		"Login": "/login",
+		"Register": "/register" },
+
+	"app_navigation_logged_in": {
+
+		"Tasks": "/challenges",
+		"About": "/about",
+		"Scoreboard": "/scoreboard",
+		"Log Out": "/logout"
+	},
+
+	"app_about": "<p>
+			This is an activity for the <a href='http://uscga.edu'>United States Coast Guard Academy</a> 2016 Intro to Linux class 
+			to help reinforce the syntax and usage of commands like <code>head</code>, <code>tail</code>, <code>wc</code>, 
+			<code>grep</code>, <code>cut</code>, <code>uniq</code>, and <code>sort</code>. 
+		</p>
+		<p>
+			The exercise is meant to be simple, but yet creative. Hopefully students begin to think 
+			about how they can cut up data in a file to get the information they really want. It is 
+			meant to be practice -- so don't be ashamed to ask for help! 
+		</p>
+	",
+
+	"challenges": [
+
+		{ 
+			"title": "<code>press_directory.txt</code>: The First 100 Lines",
+
+			"prompt": "
+			<p> 
+			What Linux command could you run to get the first 100 lines of the <code>press_directory.txt</code> file? 
+			</p>
+			",
+
+			"possible_answers": [ 
+				"head -n 100 press_directory.txt",
+				"head -n100 press_directory.txt",
+				"cat press_directory.txt | head -n 100",
+				"cat press_directory.txt | head -n100",
+				"cat press_directory.txt |head -n100",
+				"cat press_directory.txt |head -n 100",
+				"cat press_directory.txt|head -n 100",
+				"cat press_directory.txt|head -n100"
+			],
+			
+			"downloadable_files": [],
+			"points" : 1
+		},
+		{ 
+			"title": "<code>press_directory.txt</code>: How many Bureau Chiefs?",
+
+			"prompt": "
+			<p> 
+			How many occurences of 'Bureau Chief' are there in the <code>press_directory.txt</code> file? 
+			</p>
+			",
+
+			"possible_answers": [ 
+				"35"
+			],
+			
+			"downloadable_files": [],
+			"points" : 1
+		},
+		{ 
+			"title": "<code>press_directory.txt</code>: We don't use the Fax Machine",
+
+			"prompt": "
+			<p>
+				My business doesn't have a fax machine, so we don't care about the 'Fax' number 
+				that is in the <code>press_directory.txt</code>.
+			</p>
+			<p> 
+			If we remove all the lines that have a fax number in the <code>press_directory.txt</code> file,
+			how many lines are left?
+			</p>
+			",
+
+			"possible_answers": [ 
+				"307"
+			],
+			
+			"downloadable_files": [],
+			"points" : 1
+		},
+		{ 
+			"title": "<code>press_directory.txt</code>: The Magnificent Seven",
+
+			"prompt": "
+			<p>
+				In the <code>press_directory.txt</code> file, how many phone numbers have the number 
+				<b><code>7</code></b> in the last four digits?
+			</p>
+			",
+
+			"possible_answers": [ 
+				"10"
+			],
+			
+			"downloadable_files": [],
+			"points" : 1
+		},
+		{ 
+
+			"title": "<code>noaa_co2.txt</code>: How many lines?",
+
+			"prompt": "
+
+				<p>
+					There is another file in the directory called <code>noaa_co2.txt</code>.
+					This file contains data from NOAA reporting the amount of carbon dioxide 
+					in dry air, expressed as a mole fraction (abbreviated as ppm).
+				</p>
+				<p>
+					Take a look at the file, and get to know the data. It has so many 
+					lines you may have to pipe it to <code>less</code> to be able to scroll 
+					through it easily within the terminal. (You can use arrow keys to move up 
+					and down when you use <code>less</code> to view standard output).
+				</p>
+
+				<p>
+					To solve this challenge, please tell me: what command could you run to find out 
+					how many lines are in the <code>noaa_co2.txt</code> file? 
+					(the full command, to get the number displayed back out to you)
+				</p>
+			",
+
+			"possible_answers": [ 
+				"wc noaa_co2.txt",
+				"wc -l noaa_co2.txt",
+				"cat noaa_co2.txt | wc",
+				"cat noaa_co2.txt |wc",
+				"cat noaa_co2.txt|wc",
+				"cat noaa_co2.txt| wc",
+				"cat noaa_co2.txt | wc -l",
+				"cat noaa_co2.txt |wc -l",
+				"cat noaa_co2.txt|wc -l",
+				"cat noaa_co2.txt| wc -l"
+				 ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "<code>noaa_co2.txt</code>: Hashtag Carbon Dioxide",
+
+			"prompt": "
+
+				<p>
+					The <code>noaa_co2.txt</code> file uses a <code>#</code> symbol to denote a comment, 
+					or to separate information from detail. How many lines are comments?
+				</p>
+			",
+
+			"possible_answers": [ 
+				"72"
+				 ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "<code>noaa_co2.txt</code>: Missing Datasets",
+
+			"prompt": "
+
+				<p>
+					How many data sets in the <code>noaa_co2.txt</code> file have <b>missing data?</b>
+				</p>
+			",
+
+			"possible_answers": [ 
+				"7"
+				 ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "<code>names.txt</code>: How many bytes?",
+
+			"prompt": "
+
+				<p>
+					There is another file in the folder called <code>names.txt</code>. It contains 
+					lots of first names.
+				</p>
+				<p>
+					How many bytes are there in the <code>names.txt</code> file?
+				</p>
+			",
+
+			"possible_answers": [ 
+				"35147"
+				 ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "<code>names.txt</code>: F for Filters",
+
+			"prompt": "
+
+				<p>
+					How many names start with <code>F</code> in the  <code>names.txt</code> file?
+				</p>
+			",
+
+			"possible_answers": [ 
+				"135"
+				 ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "<code>names.txt</code>: Adam wasn't really the First Human",
+
+			"prompt": "
+
+				<p>
+					<b>In alphabetical order</b>, what is the first name in the <code>names.txt</code> file?
+				</p>
+			",
+
+			"possible_answers": [ 
+				"Aaren"
+				 ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "<code>common_words.txt</code>: Seek the Unique",
+
+			"prompt": "
+
+				<p>
+					The <code>common_words.txt</code> file has a bunch of words in it, but...
+				</p>
+				<p>
+					How many <i> distinct </i> words are there in the <code>common_words.txt</code> file?
+				</p>
+			",
+
+			"possible_answers": [ 
+				"1000"
+				 ],
+			"points" : 1
+		},
+		{ 
+
+			"title": "<code>nmea.txt</code>: High on Latitude",
+
+			"prompt": "
+
+				<p>
+					The <code>nmea.txt</code> file includes <a href='http://aprs.gids.nl/nmea/#gga'>NMEA strings recorded from a GPS system</a>.
+				</p>
+				<p>
+					What command could retrieve <i><b>just</b> the value of the latitude field?</i>
+				</p>
+			",
+
+			"possible_answers": [ 
+				"cut -d \",\" -f3 nmea.txt",
+				"cut -d\",\" -f3 nmea.txt",
+				"cut -d, -f3 nmea.txt",
+				
+				"cut -d \",\" -f 3 nmea.txt",
+				"cut -d\",\" -f 3 nmea.txt",
+				"cut -d, -f 3 nmea.txt",
+
+				"cat nmea.txt | cut -d \",\" -f3",
+				"cat nmea.txt | cut -d\",\" -f3",
+				"cat nmea.txt | cut -d, -f3",
+				
+				"cat nmea.txt | cut -d \",\" -f 3",
+				"cat nmea.txt | cut -d\",\" -f 3",
+				"cat nmea.txt | cut -d, -f 3",
+
+				"cat nmea.txt |cut -d \",\" -f3",
+				"cat nmea.txt |cut -d\",\" -f3",
+				"cat nmea.txt |cut -d, -f3",
+				
+				"cat nmea.txt |cut -d \",\" -f 3",
+				"cat nmea.txt |cut -d\",\" -f 3",
+				"cat nmea.txt |cut -d, -f 3",
+
+				"cat nmea.txt|cut -d \",\" -f3",
+				"cat nmea.txt|cut -d\",\" -f3",
+				"cat nmea.txt|cut -d, -f3",
+				
+				"cat nmea.txt|cut -d \",\" -f 3",
+				"cat nmea.txt|cut -d\",\" -f 3",
+				"cat nmea.txt|cut -d, -f 3",
+
+				"cat nmea.txt| cut -d \",\" -f3",
+				"cat nmea.txt| cut -d\",\" -f3",
+				"cat nmea.txt| cut -d, -f3",
+				
+				"cat nmea.txt| cut -d \",\" -f 3",
+				"cat nmea.txt| cut -d\",\" -f 3",
+				"cat nmea.txt| cut -d, -f 3"
+
+				 ],
+			"points" : 1
+		},
+		{ 
+			"title": "<div style='color:red;float:left;display:inline;'>CHALLENGE</div>: <code>press_directory.txt</code>: One is the Loneliest Number",
+
+			"prompt": "
+			<p>
+				In the <code>press_directory.txt</code> file, how many lines <i>start with the number 1?</i>
+			</p>
+			<p><b>
+				NOTE: You might need to do some extra research to solve this challenge. 
+				Take a look at what <a href='https://en.wikipedia.org/wiki/Regular_expression'>regular expressions</a> really are.
+			</b></p>
+			",
+
+			"possible_answers": [ 
+				"32"
+			],
+			
+			"downloadable_files": [],
+			"points" : 100
+		},
+		{ 
+
+			"title": "<div style='color:red;float:left;display:inline;'>CHALLENGE</div>: <code>noaa_co2.txt</code>: Twenty is Money",
+
+			"prompt": "
+
+				<p>
+					How many lines in the <code>noaa_co2.txt</code> file have a number between 20 and  
+					30 in the <b>last column</b>?
+				</p>
+				<p><b>
+					HINT: You might need some more <a href='https://en.wikipedia.org/wiki/Regular_expression'>regular expressions</a> 
+					for this challenge.
+				</b></p>
+				<p><b>
+					HINT #2: You'll notice that <code>cut</code> tends to struggle with those repeated space characters,  
+					if you try to use a space as your delimiter. Have you ever heard of the <code>rev</code> command?
+				</b></p>
+			",
+
+			"possible_answers": [ 
+				"258"
+				 ],
+			"points" : 1000
+		}
+	]
+}

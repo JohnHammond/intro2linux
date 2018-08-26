@@ -1,0 +1,37 @@
+{% extends "base_page.html" %}
+{% block content %}
+
+	<h2> The Scoreboard </h2>
+
+	<p>
+		How do you stack up against the other players?
+	</p>
+
+
+
+
+	
+	<table id="scoreboard">
+		<tr>
+			<th> Place </th>
+			<th> Name </th>
+			<th> Score </th>
+		</tr>
+
+		<!-- {% for username in usernames  %}
+			<tr>
+				<td> &nbsp; &nbsp;{{ loop.index }} </td>
+				<td> {{ username }} </td>
+				<td> &nbsp; &nbsp; {{ scores[ loop.index0 ] }} </td>
+			</tr>
+		{% endfor %} -->
+
+		{% for user in users  %}
+			<tr>
+				<td> &nbsp; &nbsp;{{ loop.index }} </td>
+				<td> {{ user["username"] }} </td>
+				<td> &nbsp; &nbsp; {{ user[ "score" ] }} </td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

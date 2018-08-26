@@ -1,0 +1,39 @@
+{% extends "base_page.html" %}
+{% block content %}
+
+	<h2> Services </h2>
+
+		<div id="challenges">
+				<div class="challenge" id="0">
+					<h3 class="challenge_title"> Submit a Flag</h3>
+
+					<form action="{{ url_for('challenges_page') }}" id="challenge_body" method="post">
+						{% if challenges %}
+							
+							<h4> The running services are... </h4>
+
+							{% for challenge in challenges %}
+
+								<p style=' text-indent:0px; margin-left:30px;padding-bottom:10px;'>
+									<span style='font-weight: bold;'> {{ challenge.title | safe }}</span> ( {{ challenge.points }} pts ): 
+
+									{{ challenge.description | safe }}
+									<!-- <b>Connect on port {{ challenge.port }}. </b> -->
+								</p>
+
+							{% endfor %}
+						{% endif %}
+
+						<h4> Submit by the command-line via... </h4>
+
+						<pre>
+							curl -k "{{ url }}submit" --data "uuid={{session_value}}&flag=&lt;FLAG&gt;"
+						</pre>
+
+						<input type="hidden" name="challenge_id" value="0">
+						<input type="text" name="answer">
+						<input type="submit" value="Submit" onclick="return check_answer(0)">
+					</form>
+				</div>
+		</div>
+{% endblock %}

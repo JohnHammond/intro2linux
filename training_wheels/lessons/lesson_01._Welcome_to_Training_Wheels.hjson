@@ -1,0 +1,211 @@
+{
+
+  "name" : "1. Welcome to Training Wheels",
+
+# ==============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "You use this by entering commands into what is called the 'shell'.",
+
+"message" : '''
+
+  Hello!
+
+  Welcome to the Intro to Linux 'Training Wheels' shell!
+
+  This tool is designed to help you learn about Linux and how to navigate a
+  command-line interface. That's what you are using right now... a command-line!
+
+  Often times it is called a 'shell', or a 'console', or a 'terminal'... 
+  it has many names. But, the jist of it is, the way that you interact with 
+  it is by you entering 'commands' and having it do things.
+
+  Do you understand that? 
+
+
+  ''',
+
+"command_waiting" : "yes",
+
+"incorrect" : "Please say `yes` if you are ready to move on.",
+
+"in_between_text" : '''Oh no! You entered a special command!
+          Press Control + C at the same time to stop it!
+
+'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Introduction to Standard Streams",
+
+"message" : '''
+
+
+WOAH! 
+
+That was crazy! 
+
+Did you see what happened?
+
+I'm letting you live entirely inside the shell, so all you can really enter
+are commands, whether they work or not. Check it out:
+
+You entered the `yes` command, and -- believe it or not -- that really is a 
+command!
+
+It repeatedly sends the letter 'y' to standard output.
+
+Standard output is one of the three "streams" that are SUPER important when 
+working with the Linux shell. 
+
+(1) There is standard output... like everything you are seeing right now, the 
+things that are printed out on the screen by certain programs or commands. 
+
+(2) There is standard input, like how you just entered that command with the
+keyboard, or how you use a mouse to interact with your computer.
+
+(3) And there is standard error, which gets displayed like standard output, 
+but is reserved for error messages or when things go wrong with a program.
+
+Does that all make sense to you?
+
+
+  ''',
+
+"command_waiting" : "yes",
+
+"incorrect" : '''If you need more clarification, ask around or Google it!.
+Please enter `yes` when you are ready to move on.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "A Demonstration of Standard Error",
+
+"message" : '''
+
+And it looks like you have figured out that Control + C will break out of a 
+running program, or stop it from running inside your shell. Awesome!
+
+So, funnily enough, there may be a `yes` command, but there actually is not a
+`no` command. Try entering "no" and see what happens!
+
+
+  ''',
+
+"command_waiting" : "no",
+
+"incorrect" : '''Try and enter "no" as a command, and see what happens.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Introduction to the Echo command",
+
+"message" : '''
+
+Check out how the shell told you that wasn't a real command. It printed out
+the error message on the screen... but it was on the standard error stream!
+
+The command `echo` will let you work with standard OUTPUT. Try entering "echo"!
+
+
+  ''',
+
+"command_waiting" : "echo",
+
+"incorrect" : '''Enter just the `echo` command.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+
+  {
+    
+"tag" : "Commands have arguments that you separate with spaces",
+
+"message" : '''
+
+Hmm... nothing happened! 
+
+The `echo` command didn't do anything!
+
+Why not? Well, we didn't give it any arguments!
+
+The very first thing you type into the shell is the "command". Anything that
+follows is considered an "argument", or a "parameter", that you pass to the
+command. 
+
+Try entering something like "echo hello" or "echo USCGA".
+
+
+  ''',
+
+"command_waiting" : "echo ???",
+
+"incorrect" : '''Try running the `echo` command with just one argument!'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The `yes` command takes arguments, as well",
+
+"message" : '''
+
+Nice! See how it "echo-ed out" the argument you passed to it? It just sent it
+to the standard output. That is really all the `echo` command does, it just
+puts whatever you give it as arguments out onto stdout. 
+
+The `yes` command that we saw earlier also takes an argument. Give it just one!
+
+
+  ''',
+
+"command_waiting" : "yes ???",
+
+"incorrect" : '''Give the `yes` command just one argument and see what happens.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Arguments with spaces in them can be wrapped in quotes.",
+
+"message" : '''
+
+Awesome! See how the `yes` command printed out the argument over and over again,
+rather than just the letter `y`? When you pass arguments to a program, you
+change how the program behaves when it executes.
+
+Keep in mind that arguments are separated by spaces. The very first thing you
+type in into the shell is your command, and then everything following the 
+first space is an argument.
+
+
+  ''',
+
+  },
+
+# ----------------------------------------------------------------------
+
+  ]
+}

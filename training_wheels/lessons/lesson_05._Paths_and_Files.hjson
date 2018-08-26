@@ -1,0 +1,303 @@
+{
+
+  "name" : "5. Paths and Files",
+
+# ==============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "Let's start at the root directory.",
+
+"message" : '''
+
+Let's start at the root directory. Please change directory there.
+
+
+  ''',
+
+"command_waiting" : "cd /",
+
+"incorrect" : "Please run `cd /`.",
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Get to a new folder with a relative path",
+
+"message" : '''
+
+Now, let's move to `var/local`.
+
+Notice that simply because this does not start with a /, it is A RELATIVE PATH.
+I also specify that I want to go into another directory inside the 'var' directory.
+Remember that those forward slashes (when not at the very start!) represent another
+sub-level of folders.
+
+
+  ''',
+
+"command_waiting" : "cd var/local",
+
+"incorrect" : '''Use a relative path. Please run `cd var/local`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Reminder: `ls` to list stuff!",
+
+"message" : '''
+
+Next, please run the command list all the files and folders in the current 
+working directory.
+
+
+  ''',
+
+"command_waiting" : "ls",
+
+"incorrect" : '''Do you remember how to List Stuff?'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "ls doesn't always show all files!",
+
+"message" : '''
+
+This directory is very likely empty, so you won't see any output.
+
+But, interestingly enough, it does "contain" some "special" files and folders --
+that just happent to be in every folder!
+
+Trust on me this one, and run `ls -a`
+
+
+  ''',
+
+"command_waiting" : "ls -a",
+
+"incorrect" : '''Run `ls -a`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "`ls -a` lists ALL files and folders",
+
+"message" : '''
+
+You see a period, and another ".." two periods?
+
+So, that `-a` argument to the `ls` command means to list ALL files and folders.
+It will display two special symbols, just a period "." and two periods, ".."
+
+Try `cd .`
+
+
+  ''',
+
+"command_waiting" : "cd .",
+
+"incorrect" : '''Try `cd .`'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The . period means the CURRENT DIRECTORY",
+
+"message" : '''
+
+Your path should not have changed at all!
+
+This is because the dot, a single period, "." is actually another symbol
+that just means the CURRENT DIRECTORY YOU ARE WORKING IN.
+
+Run `ls` again with that argument to list ALL files and folders.
+
+
+  ''',
+
+  "command_waiting" : "ls -a",
+
+  "incorrect" : '''Remember that the `-a` argument to `ls` will list everything. Try it!'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Reminder: ls -a will list ALL files and folders!",
+
+"message" : '''
+
+So we have covered the single dot, but what about the .. two dots? Try changing directory to that.
+
+
+  ''',
+
+  "command_waiting" : "cd ..",
+
+  "incorrect" : '''Change directory to that ".."'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "The .. two periods means your PARENT directory.",
+
+"message" : '''
+
+You should have seen your prompt change this time! 
+
+Now you should be in simply `/var`. Those .. two periods mean the PARENT DIRECTORY,
+or the one just above your current location!
+
+Run it one more time. `cd ..`
+
+
+  ''',
+
+  "command_waiting" : "cd ..",
+
+  "incorrect" : '''Run it one more time. `cd ..` '''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Reminder: the root directory is a forward slash!",
+
+"message" : '''
+
+And now we are back at the root directory!
+
+Try the command now. Does `cd ..` change your path at all? Try it.
+
+  ''',
+
+  "command_waiting" : "cd ..",
+
+  "incorrect" : '''Run it one more time. `cd ..` '''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "The root directory is the uppermost folder, so it has no parent!",
+
+"message" : '''
+
+Of course not! 
+
+The root directory is the ROOT directory -- there is nothing above it, is has
+no PARENT directory. So, trying to cd to .. from / will just put you back at /.
+
+Now let's change back to our home directory. Remember, at this point, you know A LOT
+of different ways to do that:
+                              `cd /home/pi` ... when using an absolute path
+                              `cd home/pi` ... when using a relative path from here
+                              `cd ~`      ... when using that ~ as a special symbol
+                              `cd`      ... when not passing any arguments to `cd`.
+
+The quickest one is the quickest one to type -- so let's run `cd` with no arguments.
+
+  ''',
+
+  "command_waiting" : "cd",
+
+  "incorrect" : '''Get back to your home directory with just the `cd` command.'''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "`ls -a` shows hidden files, too!",
+
+"message" : '''
+
+Let's try that `ls` command now that we are in your home directory to see what
+files and folders you have to yourself.
+
+  ''',
+
+  "command_waiting" : "ls",
+
+  "incorrect" : '''Run `ls`.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Hidden files in Linux start with a . at the beginning of their filename",
+
+"message" : '''
+
+But, is that ALL files and folders? You should know how to find out by now.
+
+  ''',
+
+  "command_waiting" : "ls -a",
+
+  "incorrect" : '''What argument can you pass to `ls` to show everything?
+  If you don't remember, ask around!'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "There are often many hidden files in your home directory",
+
+"message" : '''
+
+Remember, you can scroll up and down with the keyboard via Shift + PageUp / PageDown.
+
+See all those different files now? Those that start with a '.' were HIDDEN files in
+Linux! By default, `ls` will not show those hidden files. You have to use `ls -a` to
+be able to see them! 
+
+To look more at what the `ls` command does, remember -- you can use the `man` command
+and pass `ls` as an argument to read more about it in its manual!
+
+  '''
+  
+  }
+
+
+  ]
+}

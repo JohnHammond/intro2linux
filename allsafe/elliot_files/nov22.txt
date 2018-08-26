@@ -1,0 +1,4 @@
+We started using GPG at Allsafe, so I wanted to take some notes on how to use it. There is documentation online, but the best place to look is always in the man pages.
+
+I left a file in the /usr/bin directory. It's the only one with a ".txt" extension.
+

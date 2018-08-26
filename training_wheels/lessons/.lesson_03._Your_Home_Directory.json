@@ -1,0 +1,63 @@
+{
+  "name": "3. Your Home Directory",
+  "concepts": [
+    {
+      "tag": "`pwd` means Print Working Directory",
+      "message": "\n\rThat `pwd` command, as I'm sure you read in the man page, means \"print working\n\rdirectory\". Run the `pwd` command now.\n\r\n\r",
+      "command_waiting": "pwd",
+      "incorrect": "Run the command `pwd`."
+    },
+    {
+      "tag": "Your current directory is also in your prompt.",
+      "message": "\n\r`pwd` printed to standard output your WORKING DIRECTORY, or where you currently\n\rare inside the Linux file system. Whenever you are inside the shell, you reside\n\rsomewhere in the filesystem. You can see it is very similar to that blue text that\n\ryou will see in your prompt. Your prompt typically shows where you are in the file\n\rsystem, so you don't have to run `pwd` all the time.\n\r\n\rNote the only difference: the `pwd` output starts with `/home/pi` while the\n\rblue text in your prompt starts with a `~` tilde instead. Do you see it?\n\r\n\r",
+      "command_waiting": "yes",
+      "incorrect": "Just to review, please enter `yes` when you're ready to move on.\n\rRemember that Control + C while end the running program."
+    },
+    {
+      "tag": "The tilde character is a special character in Linux",
+      "message": "\n\rRun the `cd` command to \"Change Directory\" to that tilde. `cd` will take the\n\rdirectory as an argument, like: `cd ~`\n\r\n\r",
+      "command_waiting": "cd ~",
+      "incorrect": "`cd` to that tilde (it takes it as an argument)."
+    },
+    {
+      "tag": "The ~ character actually means your home directory!",
+      "message": "\n\rNow the blue text in your prompt should have changed! You're currently at that\n\r`~` tilde directory. Trying running `pwd` again.\n\r\n\r",
+      "command_waiting": "pwd",
+      "incorrect": "Run `pwd` again."
+    },
+    {
+      "tag": "~ and /home/<USERNAME> are one and the same.",
+      "message": "\n\rNow it says you are at the `/home/pi` directory!\n\r\n\rSo in Linux, this is your HOME directory. You can think of it as like your\n\r\"My Documents\" folder in Windows -- it is where all of your own personal \n\rfiles and folders are kept. It correlates to your username.\n\r\n\rTry running `whoami`.\n\r",
+      "command_waiting": "whoami",
+      "incorrect": "Run `whoami`."
+    },
+    {
+      "tag": "The <USERNAME> part of the home directory is your user!",
+      "message": "\n\rYou are \"pi\"! That's why your HOME directory is in /home/pi. The last part\n\rof it is your username, to denote that it is YOUR home directory.\n\r\n\rAnd we got here from that ~ tilde character. That means the ~ character\n\ris a special symbol in Linux that represents your home directory.\n\r\n\rTry and run `cd` without any arguments.\n\r\n\r",
+      "command_waiting": "cd",
+      "incorrect": "Run `cd` without any arguments."
+    },
+    {
+      "tag": "`cd` without any arguments takes you to your home directory.",
+      "message": "\n\rCheck your prompt -- you haven't changed directory anywhere. \n\r\n\rTrust me on this one, and try `cd ..`\n\r\n\r",
+      "command_waiting": "cd ..",
+      "incorrect": "Enter `cd ..`"
+    },
+    {
+      "tag": "There are many ways to get to your home directory.",
+      "message": "Now try running `cd` one more time. Enter just `cd`, no arguments.\n\r",
+      "command_waiting": "cd",
+      "incorrect": "Run cd without any arguments."
+    },
+    {
+      "tag": "cd is how you navigate anywhere in the Linux ",
+      "message": "\n\rSee your prompt changed! When you run `cd` without any arguments, it takes \n\ryou back to your home directory, the ~. Before, when you were already there,\n\rit didn't look like you moved anywhere -- but you did go back to /home/pi.\n\r\n\rRun `pwd` one last time.\n\r\n\r",
+      "command_waiting": "pwd",
+      "incorrect": "Run `pwd` one last time."
+    },
+    {
+      "tag": "Summary on how to access your home directory",
+      "message": "\n\rThere are lots of ways to get to your home directory. You could type it all \n\rout, and run\n\r\n\r`cd /home/pi`\n\r\n\ror you could pass in that ~ special symbol to get there, like `cd ~`.\n\rOr, you could just enter `cd` without any arguments.\n\r\n\r"
+    }
+  ]
+}

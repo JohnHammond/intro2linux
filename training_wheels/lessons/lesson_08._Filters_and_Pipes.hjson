@@ -1,0 +1,899 @@
+{
+
+  "name" : "8. Filters and Pipes",
+
+# ==============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "Start in the training_wheels/resources/filters folder",
+
+"message" : '''
+
+For this lesson, I have prepared some files for you to work with. To access them,
+please change directory to `~/linux_16/resources/filters`
+
+(NOTE: Since Training Wheels is finicky about how you progress through the script,
+you will need to enter that single command verbatim...)
+
+
+  ''',
+
+"command_waiting" : "cd ~/linux_16/resources/filters",
+
+"incorrect" : "The command to get there is `cd ~/linux_16/resources/filters`",
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "I have a lot of text files prepared for you!",
+
+"message" : '''
+
+I have left a few .txt files in here. Please list them out!
+(you don't need any special arguments, just list stuff)
+
+
+  ''',
+
+"command_waiting" : "ls",
+
+"incorrect" : '''What is the command to list stuff in the current directory?'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Let's start to look through the files",
+
+"message" : '''
+
+Nice. Let's start to look through them. Please display the contents of the
+`press_directory.txt` file.
+
+
+  ''',
+
+"command_waiting" : "cat press_directory.txt",
+
+"incorrect" : '''Do you remember the command to show the contents of a file?'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Check out the man page for the `head` command",
+
+"message" : '''
+
+That's a lot of info! I honestly forget what this file is, though...
+
+Here, I want to teach you a new command. The command is called `head`...
+please check out its man page and read it a little bit, before moving on!
+
+Remember, you can use Shift+PageUp to scroll up in the terminal.
+
+
+  ''',
+
+"command_waiting" : "man head",
+
+"incorrect" : '''Check out the man page for the `head` command.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  {
+    
+"tag" : "Use `head` on the `press_directory.txt` file.",
+
+"message" : '''
+
+If you read through the description and syntax, it looks like the `head` command
+will (by default) print out the first 10 lines of a file passed to it as an argument.
+
+Let's try passing it that `press_directory.txt` as an argument.
+
+
+  ''',
+
+"command_waiting" : "head press_directory.txt",
+
+"incorrect" : '''Run `head` on the `press_directory.txt` file.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You can see that start of the file with the `head` command.",
+
+"message" : '''
+
+Oh right! This file was an archive of businesses that sold the press in
+Washington DC, around 1995. So there is a lot of information contained in
+this file!
+
+`head` retrieved just the top of the file, the first 10 lines. If you looked
+through the man page, you may have noticed you can pass another argument to change
+the number of lines it displays. Try using `head -n 20 press_directory.txt`
+
+
+  ''',
+
+  "command_waiting" : "head -n 20 press_directory.txt",
+
+  "incorrect" : '''Please run `head -n 20 press_directory.txt`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You can also view from the start of the file from a place by the end",
+
+"message" : '''
+
+So that displayed the first 20 lines, right? Sweet!
+
+You can also display UP UNTIL a set number of lines FROM THE END of the file.
+Rather than supplying a positive number, to slice from the start of the file, 
+you can supply a negative number to slice up until that number of lines from the end.
+
+Try `head -n -20 press_directory.txt`
+
+
+  ''',
+
+  "command_waiting" : "head -n -20 press_directory.txt",
+
+  "incorrect" : '''Use a negative number this time. `head -n -20 press_directory.txt`'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "There is another command that works similar to this: `tail`",
+
+"message" : '''
+
+See there is a lot more content this time, since you got the very top of the file
+up until 20 lines from the end. 
+
+There is another command that works similar to `head` -- check out the man page for 
+the `tail` command!
+
+
+  ''',
+
+  "command_waiting" : "man tail",
+
+  "incorrect" : '''Check out the man page for the `tail` command.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "`tail` will display FROM the END, rather than `head` FROM the START",
+
+"message" : '''
+
+If you read the description, you'll know it displays (by default) the LAST 10 lines
+of a file.
+
+Try it on the `press_directory.txt` file.
+
+
+  ''',
+
+  "command_waiting" : "tail press_directory.txt",
+
+  "incorrect" : '''Run `tail` on the `press_directory.txt` file.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You can supply the same kind of arguments to `tail` as you can `head`",
+
+"message" : '''
+
+You can supply the same kind of arguments to `tail` as you can head.
+I want to see the last 50 lines of the file. Can you show me those?
+
+
+  ''',
+
+  "command_waiting" : "tail -n 50 press_directory.txt",
+
+  "incorrect" : '''Remember you can pass the `-n` argument to tail to specify
+  the number of lines you want to read, from the end of the file.'''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Use the command `wc` to get more info about a file.",
+
+"message" : '''
+
+Awesome. So we've been slicing all the data in this file, but it would also 
+be kind of handy to know how MUCH data is in the file. We can look at that with
+the `wc` command. Try running `wc` and passing in the `press_directory.txt` file.
+
+
+  ''',
+
+  "command_waiting" : "wc press_directory.txt",
+
+  "incorrect" : '''Run `wc` on the `press_directory.txt` file.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Check out the man page on the `wc` command to see what it tells you.",
+
+"message" : '''
+
+Well that gave us some numbers but we don't really know they mean.
+Check out the man page for `wc` to see what it is really telling you.
+
+
+  ''',
+
+  "command_waiting" : "man wc",
+
+  "incorrect" : '''Check out the man page for the `wc` command.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "wc actually tells you number of lines, words, and bytes.",
+
+"message" : '''
+
+So if you do some reading, it turns out that wc really tells you the number of
+lines, words, and bytes in a file. That's how `wc` gets its name: Word Count.
+
+If we want to know specifically one thing about the file, we can supply an argument.
+To find out the number of lines in the file, we can use the `-l` argument, just like
+it says in the man page.
+
+Give it a go: `wc -l press_directory.txt`
+
+
+  ''',
+
+  "command_waiting" : "wc -l press_directory.txt",
+
+  "incorrect" : '''Use `wc -l press_directory.txt` to get the number of lines.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "All of the commands can read from standard input!",
+
+"message" : '''
+
+351 lines! That's a lot of info... and there will be times when you are working
+with tens of thousands!!
+
+So let's review the standard streams. You know "standard output" is what is displayed
+out on the command-line, and "standard input" is what you end up typing in with
+your keyboard. If you remember from the man pages of all of these three commands 
+(wc, tail, and head), these commands can read from "standard input".
+
+Try using the `head` command without any arguments. Type some garbage, hit Enter,
+and do this a few times until you get tired of it and hit Control+C to break out.
+
+
+  ''',
+
+  "command_waiting" : "head",
+
+  "incorrect" : '''Run `head` without any arguments. Ctrl+C to break out of it.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "We can take advantage of this with redirection",
+
+"message" : '''
+
+Do you see what it is doing? It gets "the first 10 lines" of everything you type...
+but you can only enter one line at a time. Either way, you're still entering data
+into the `head` command, it is still reading in data from what you type in.
+
+The point that I am getting at here is that the `head` command-- and `wc` and `tail`--
+don't need to have a file passed into them -- they can read from standard input.
+
+This is awesome, because we can take advantage of it with redirection. You've used
+redirection before, when you used a `>` greater than symbol to redirect some command's
+standard output to a file. 
+
+Remember you can can control standard output with `echo`?
+
+Enter `echo "Intro to Linux"` to refresh your memory.
+
+
+  ''',
+
+  "command_waiting" : echo "Intro to Linux"
+
+  "incorrect" : '''Enter the command: `echo "Intro to Linux"`'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "We can use a | pipe to redirect stdout to stdin!",
+
+"message" : '''
+
+It just displays the text "Intro to Linux" to stdout, right? Super easy.
+
+Now, let's REDIRECT one command's STANDARD OUTPUT to another commands STANDARD INPUT.
+
+We can do this with the | pipe symbol. It is the Shift key alternative to the \ 
+backslash, right above the Enter key on your keyboard.
+
+Use the Up arrow key to scroll back through your command history. Tack on to your old
+`echo "Intro to Linux"` command the pipe character, and the `wc` command.
+
+So your command should look like `echo "Intro to Linux" | wc`
+
+
+  ''',
+
+  "command_waiting" : echo "Intro to Linux" | wc
+
+  "incorrect" : '''Please run the command `echo "Intro to Linux" | wc`.
+  Remember, Training Wheels will need you to include the spaces!!'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "That way, we don't need to pass a filename or even give a file!",
+
+"message" : '''
+
+Sweet! `wc` told us that there was only 1 line, there were 3 words, and 15 bytes.
+And we didn't even have to give it a file... we just piped in a string!
+
+But take a look at what we did. The OUTPUT of the `echo` command was piped to the
+INPUT of the `wc` command. We can do this with the `head` command and the `tail` command
+too, right? Because they can take standard input. 
+
+To see this, first we'll need to get the contents of the `press_directory.txt` in
+stdout. So, please enter the command to display the contents of that file!
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt
+
+  "incorrect" : '''Do you remember the `cat` command?'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You can use `cat` to display a file and then pipe it to other commands!",
+
+"message" : '''
+
+Now use the arrow keys again to go back up in your command history. Get the 
+`cat press_directory.txt` command, and tack on a pipe and the `head` command!
+
+Since you aren't passing any filename to `head` and you are just reading from stdin,
+you don't need any arguments.
+
+Your command should look like: `cat press_directory.txt | head`
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | head
+
+  "incorrect" : '''You should run the command `cat press_directory.txt | head`'''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You can pipe commands into other commands forever and ever!",
+
+"message" : '''
+
+This gave us the exact same output as when we used `head` earlier, but we did it
+with piping and redirection!
+
+The awesome thing is, you can keep "piping" forever and ever. You can tack on more 
+commands and keep sending standard output to standard input.
+
+Try this: `cat press_directory.txt | head | wc -l`
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | head | wc -l
+
+  "incorrect" : '''Try the command `cat press_directory.txt | head | wc -l`.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Introduction to grep",
+
+"message" : '''
+
+And `wc` tells us we have 10 lines of output -- exactly what we should, since
+`head` only displayed the first 10 lines of the file!
+
+Now let's start to parse through some of the more interesting parts of the data.
+I want to introduce you to the `grep` command, but the man page is way too long.
+Instead, run `grep --help` and pipe it into the `head` command.
+
+NOTE that you will have to include a space before and after the pipe symbol for 
+Training Wheels to realize you have the correct syntax -- sorry!
+
+
+  ''',
+
+  "command_waiting" : grep --help | head
+
+  "incorrect" : '''Your command should look like `grep --help | head` for Training
+  Wheels to move on.'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "grep stands for GNU Regular Expression Processor",
+
+"message" : '''
+
+So `grep` will search for a specific pattern in a file, and it will (by default) print
+out all the lines that have an occurence of that pattern. It will take a filename as
+an argument (just like `head`, `tail`, and `wc` did), or we can use standard input.
+(We will use standard input and piping, because it gives us more flexibility)
+
+`grep` is all about Regular Expressions, which is a super powerful "language" that
+can do pattern-matching in plain text. We won't get into much detail on it now, but
+if you feel curious about it, I definitely recommend learning more about them.
+
+For now, we can just supply a pattern to search for and we'll get by just fine.
+To lay the groundwork for this exercise, please display out the contents of the 
+`press_directory.txt` file.
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt
+
+  "incorrect" : '''You don't need to pipe or do anything special-- just cat the file.'''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "Now we can use grep to pattern-match things in the file.",
+
+"message" : '''
+
+Let's say we wanted all the phone numbers for all the businesses.
+It looks like each unique business has its own respective phone number,
+so if we got that data we could even figure out the total number of businesses.
+
+We'll start by grabbing the phone numbers.
+
+Try `cat press_directory.txt | grep "Phone"`
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep "Phone"
+
+  "incorrect" : '''Try `cat press_directory.txt | grep "Phone"`'''
+
+  },
+
+  # ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You can do this with any string as your pattern.",
+
+"message" : '''
+
+Nice! Check out all the phone numbers. Let's count how many there are by piping into
+`wc` again. Remember to scroll through your command history with the arrow keys so you
+don't have to retype everything. The new command should be:
+
+`cat press_directory.txt | grep "Phone" | wc -l`
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep "Phone" | wc -l
+
+  "incorrect" : '''Pipe it into wc -l to get the number of lines.
+  `cat press_directory.txt | grep "Phone" | wc -l`'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "And other arguments to grep can filter other things, too!",
+
+"message" : '''
+
+Sweet. That answers the question as to how many businesses are in the directory.
+
+Let's say we didn't want to see the phone number included in the directory.
+You can give the `-v` argument to `grep` to INVERT the filter, so that things
+WITHOUT that pattern will be displayed.
+
+Let's try that: `cat press_directory.txt | grep -v "Phone"` 
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep -v "Phone"
+
+  "incorrect" : '''Try and remove the directory `library`.'''
+
+  },
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "You should experiment with all the arguments to grep.",
+
+"message" : '''
+
+See how all the lines containing "Phone" are gone now?
+
+There are lots of other arguments you can pass to `grep`. Typically, `grep` is
+case-sensitive. So try this:
+
+`cat press_directory.txt | grep "phone"`
+
+Note the LOWERCASE p in this case.
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep "phone"
+
+  "incorrect" : '''Try the command `cat press_directory.txt | grep "phone"`'''
+
+  },
+
+
+# ----------------------------------------------------------------------
+
+  
+  {
+    
+"tag" : "-i will make grep case-insensitive",
+
+"message" : '''
+
+.... Hmmm... no results.
+
+Like I said, grep is case-sensitive by default. Since there are no occurences of
+"phone" with a lowercase P, nothing was printed to stdout.
+
+Try that same command, but now supply the `-i` argument to `grep`.
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep -i "phone"
+
+  "incorrect" : '''Do you remember the syntax for the other commands? If you don't,
+  ask for help! You just need to pass the `-i` argument into grep now.'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You can look at all the other commands for grep in the man page later",
+
+"message" : '''
+
+You should get all the lines containing phone numbers now. Later on, when you're not
+in Training Wheels, you should check out the man page for `grep` to see what else it
+can do.
+
+For now, let's start to cut up the data. I don't want to see that "Phone:" string 
+preceding the phone number-- I want just the number. 
+
+So, check out the man page for the `cut` command.
+
+
+  ''',
+
+  "command_waiting" : man cut
+
+  "incorrect" : '''The syntax for the `man` command is easy, right?'''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "cut is a powerful command to filter things",
+
+"message" : '''
+
+You should see in the man page that `cut` will take a filename as 
+an argument, but it can also read from standard input (so we can pipe!)
+just like all the other commands.
+
+The man page explained how you can specify a list of bytes, characters,
+or fields. Extracting certain fields is typically the most useful, but 
+to do that, we need to  supply a delimeter. A delimeter is what separates 
+fields: like in a list, typically a comma is the delimeter. So in the list 
+`A,B,C,D` ... A is the 1st field, B the second, etc.
+
+You can only specify one character to be your delimeter when you use "cut". 
+You can specify that delimeter to be anything you want, and you can specify 
+any number of fields or even a range of fields.
+
+`cut` should  be able to cut up the phone numbers and get just the phone 
+number itself in our output. Scroll up in your command history so you don't
+have to retype all that stuff, and tack on another pipe!
+
+`cat press_directory.txt | grep -i "phone" | cut -d " " -f2`
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep -i "phone" | cut -d " " -f2
+
+  "incorrect" : '''Run the command `cat press_directory.txt | grep -i "phone" | cut -d " " -f2`'''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "We can keep on cutting up the data!",
+
+"message" : '''
+
+You can piece together what that syntax is, right? The `-d` arguments mean you
+want to specify the delimeter, and the `-f2` means you want the second field.
+You can pass in any number here, or even supply a range (like `-f2-5`) or 
+multiple fields (like `-f1,2,3`)
+
+Now we've got all the phone numbers. Next, let's say I wanted to know the
+unique area codes. Can you figure out how we can cut up this data to get the
+area codes?
+
+Remember to put a space between each part of your command; or else 
+Training Wheels won't be able to validate your input (sorry!)
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep -i "phone" | cut -d " " -f2 | cut -d "-" -f1
+
+  "incorrect" : '''Here's the syntax that I came up with:
+
+  `cat press_directory.txt | grep -i "phone" | cut -d " " -f2 | cut -d "-" -f1`
+
+  '''
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Learn the `uniq` command",
+
+"message" : '''
+
+And at this point we have all the area codes! But I want the UNIQUE area codes.
+It's pretty easy to look at this data and figure it out on our own, but we should
+learn how we can get Linux to do it in case we have lots of data later on.
+
+Check out the man page for the `uniq` command.
+
+
+  ''',
+
+  "command_waiting" : man uniq
+
+  "incorrect" : '''Check out the man page for the `uniq` command.'''
+
+  },
+
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Tack on `uniq` to the area code syntax",
+
+"message" : '''
+
+`uniq` looks like it will display all of the unique lines out on stdout. 
+Let's tack it onto our previous command to display all the area codes!
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep -i "phone" | cut -d " " -f2 | cut -d "-" -f1 | uniq
+
+  "incorrect" : ''' Your command should look like:
+`cat press_directory.txt | grep -i "phone" | cut -d " " -f2 | cut -d "-" -f1 | uniq`
+   '''
+
+  },
+
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "But to get all the unique lines, we need to sort it first!",
+
+"message" : '''
+
+I see 202, 703, 202 again... wait, what? Why did it show 202 again? Why are there
+all these duplicates?
+
+If you read closely in the man page of `uniq`, it will remove repeated ADJACENT lines.
+The man page even contains a special note: '`uniq`  does not detect repeated lines
+unless they are adjacent.  You may want to sort the input first'
+
+So first we have to get the area codes sorted in order. Use your command history
+to run the last command again, but rather than running `uniq`, let's run another new
+command: this time, run `sort`.
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep -i "phone" | cut -d " " -f2 | cut -d "-" -f1 | sort
+
+  "incorrect" : ''' Your command should look like:
+`cat press_directory.txt | grep -i "phone" | cut -d " " -f2 | cut -d "-" -f1 | sort`
+   '''
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "After you sort it, then you can use `uniq` to get each distinct line!",
+
+"message" : '''
+
+And just like that, all of our data is sorted! You can see the 202 is all
+at the top and the 703 is all at the bottom.
+
+Now we should be able to run `uniq` and get all the unique lines, right? 
+Tack it onto our old command.
+
+
+  ''',
+
+  "command_waiting" : cat press_directory.txt | grep -i "phone" | cut -d " " -f2 | cut -d "-" -f1 | sort | uniq
+
+  "incorrect" : ''' Your command should look like:
+`cat press_directory.txt | grep -i "phone" | cut -d " " -f2 | cut -d "-" -f1 | sort | uniq`
+   '''
+
+  },
+
+    # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Remember that you can get the count with `wc -l`.",
+
+"message" : '''
+
+We can visually see that there are only two unique area codes, but you should know now
+that if you had many many many more of them, you could still find out the number by
+tacking on another `wc -l`, right?
+
+So that was a lot of stuff! Look at all the commands you just learned:
+
+  1.         head
+  2.         tail
+  3.         wc
+  4.         grep
+  5.         cut
+  6.         uniq
+  7.         sort
+
+And you learned all about piping! Being able to redirect one command's standard output
+to another command's standard input is incredibly powerful. It pretty much lets you
+chain commands together, and you can keep building and building onto one command
+to really filter out the data that you need and find the information you really care
+about.
+
+
+
+  '''
+  }
+
+]
+}

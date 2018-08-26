@@ -1,0 +1,593 @@
+{
+
+  "name" : "9. Users, Root, and Sudo",
+
+# ============================================================================
+
+  "concepts": [
+
+  {
+    
+"tag" : "Who are you?",
+
+"message" : '''
+
+This lesson aims to teach you about users on Linux. First of all, let's lay the
+foundation to build off of -- we want to know what you user you are currently
+running as right now. 
+
+You've used this command before, but I want to remind you of it.
+Please enter `whoami`
+
+  ''',
+
+"command_waiting" : whoami
+
+"incorrect" : "To see what user you are currently running as, use `whoami`.",
+
+  },
+
+    # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "There can be other users logged in to your computer, too.",
+
+"message" : '''
+
+You are the `pi` user! This is the account that is set up by default on the Raspberry
+Pi. To see what other users are logged in to your computer currently, use the `w` 
+command.
+
+  ''',
+
+"command_waiting" : w
+
+"incorrect" : "Use the `w` command to see what other users are currently logged in.",
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You list all logged in users with the `w` command.",
+
+"message" : '''
+
+If you notice, it's just the `pi` user -- just you, currently you are the only person
+logged in. That makes sense, right? Because you're the only person sitting and typing
+at the keyboard. Why would it show anything else?
+
+Well, don't forget that Linux is designed to be a MULTI-USER system. It is not like
+Microsoft Windows, where are you strapped to a clunky user-interface and only one person
+can be using the computer at a time.
+
+Remember that in Linux, you are at the command-line, typing commands into the terminal 
+-- and there can be OTHER people that are remotely connected to your computer and 
+using the terminal as well! 
+
+That "remote connection" is typically called "Secure Shell", or "SSH", and we'll get
+into it more in a future class.
+
+Check out the man page for the `w` command.
+
+  ''',
+
+"command_waiting" : man w
+
+"incorrect" : "Check out the man page for the `w` command.",
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You can pass arguments to `w` to see more information about who is logged in.",
+
+"message" : '''
+
+Take a look through some of the different arguments you can supply. One of them, the 
+`-i` or the `--ip-addr` argument will have the command show an IP address of the
+computer that is connected to you, in case they are using that "ssh" connection,
+or remotely connected to your computer.
+
+So that's cool, but it doesn't explain why your username, `pi`, shows up multiple times
+in the output of the `w` command. Why is that?
+
+Well, you are running multiple processes that stay alive. One of them is the user
+session that is created when you log into your Linux account -- another is your
+shell, `bash`, and another is even the `w` command itself (because it sees itself as
+an active process when it is running).
+
+You know about `bash`, right? That's the "shell" that you are running. 
+`bash` is the name ofthe shell that you are using right now, when you are interacting 
+with the Linux terminal and command-line.
+
+Remember, it is a program and a BINARY, and it is stored in the `/bin` directory. 
+Do you remember one of the special files that lives in the `/etc` directory?
+
+I'm referring to the `/etc/passwd` file! Please cat out that file.
+
+  ''',
+
+"command_waiting" : cat /etc/passwd
+
+"incorrect" : '''Please cat out the `/etc/passwd` file.''',
+
+  },
+
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "/etc/passwd holds information about users on the Linux system",
+
+"message" : '''
+
+So this is a very special file, because it contains information about all the
+different kinds of users on your Linux computer. It is a lot to look at right now,
+though, so let's try and "zoom in". 
+
+Please tack on to the old command a PIPE, and grep for your username. 
+
+  ''',
+
+"command_waiting" : cat /etc/passwd | grep "pi"
+
+"incorrect" : '''Do you remember the `grep` command? Here is what you want: 
+`cat /etc/passwd | grep "pi"`
+''',
+
+  },
+
+
+ # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "/etc/passwd has important info in its fields",
+
+"message" : '''
+
+This narrows down our output, so we can really see what we're working with.
+
+So `/etc/passwd` is a file that uses a colon ":" as a delimiter, and lists
+information about users on each line. The first field is the username.
+The second field is the user's password, but it is typically stored as a hash
+(an encrypted set of data). On most modern Linux systems, the hash is not displayed 
+in the `/etc/passwd` file, and it is hidden and replaced with an 'x'.
+
+The third field is the "user ID", or the specific number and identifier assigned to the
+user. The fourth field is their "group ID", which is another identifier, but instead for
+the group the user is a part of. 
+
+The fifth field displays the users' full name and description (if they have entered 
+that extra information in as details with their user account.) The sixth field is the
+location of their home directory, and finally the last field is the shell that they use.
+
+I want to reinforce this stuff for you. Please run another new command, called `id`.
+
+  ''',
+
+"command_waiting" : id
+
+"incorrect" : '''Please run another new command: `id`. ''',
+
+  },
+
+   # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The `id` command will show you a user's user ID and group ID",
+
+"message" : '''
+
+This will show a user's specific user ID and group ID. Do you see your
+numbers match up with the information you saw in the `/etc/passwd` file?
+
+The command should also list the groups that the user is associated with.
+That verifies the user ID and the group ID fields... so now let's check out
+our home directory information. 
+
+Enter the `cd` command. Remember, without any arguments it should take you
+to your home directory by default.
+
+  ''',
+
+"command_waiting" : cd
+
+"incorrect" : '''Enter the `cd` command.''',
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Your home directory should match up with what is in the /etc/passwd file",
+
+"message" : '''
+
+Now, run `pwd`?
+
+  ''',
+
+"proper_directory": "/home/pi"
+
+"command_waiting" : pwd
+
+"incorrect" : '''Now run the `pwd` command.''',
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "There are typically home directories for all of the users on the box",
+
+"message" : '''
+
+Sweet, our home directory checks out with the /etc/passwd entry, too. That makes sense!
+Now, move up one directory, go to your PARENT directory. Remember, `/home` is
+typically where all the user home directories are located, so there should be a specific
+folder for each user!
+
+cd up to the parent directory.
+
+  ''',
+
+"proper_directory": "/home/pi",
+
+"command_waiting" : cd ..
+
+"incorrect" : '''Change directory up to the parent directory with `cd ..`''',
+
+  },
+
+    # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You should see all the users home directories in /home",
+
+"message" : '''
+
+And `ls`?
+
+  ''',
+
+"proper_directory": "/home"
+
+"command_waiting" : ls
+
+"incorrect" : '''Next run the `ls` command.''',
+
+  },
+
+    # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You should see all the users home directories in /home",
+
+"message" : '''
+
+Sweet! We see our directory, the `pi` folder. The ABSOLUTE PATH of that is
+`/home/pi`, exactly what we expected it to be.
+
+But wait a second... there were a whole ton of other users in the `/etc/passwd` 
+file list, right? That file was huge!
+
+Let's take a look at it again. Please display the contents of `/etc/passwd`.
+
+  ''',
+
+"command_waiting" : cat /etc/passwd
+
+"incorrect" : '''Please display the contents of `/etc/passwd`.''',
+
+  },
+
+
+    # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Any user that has the shell of /bin/false is not REALLY a user",
+
+"message" : '''
+
+If you look closely, you should see some entries for users that have `/bin/false`
+as the designated shell. Well, the same way that `bash` is a command, so is `false`...
+so let's try running that, and see what happens...??
+
+
+  ''',
+
+"command_waiting" : "false"
+
+"incorrect" : '''Try running the `false` command just to see what happens?''',
+
+  },
+
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Because /bin/false isn't really a shell -- it doesn't do anything!",
+
+"message" : '''
+
+. . . .  Uhhh. . . . .  nothing??
+
+It does nothing!
+
+So `/bin/false` is a literally an empty command, it does nothing. By default in Linux,
+it is set up as the shell to use for users that don't REALLY exist as interactive users.
+Like, you can't log in as the `postfix` user... because it is just an account that is
+created for a special service on Linux. It is a unique background process that does 
+something on its own, much like a "service" in Windows. In Linux, it just happens to
+run the service with an associated user account.
+
+But, what if wanted to know only the "REAL" users on our Linux computer?
+Well, we know that we can log in and interact with a shell because we have `bash`
+as our shell. Can we search for lines that have "bash" in them to see what other
+users really are interactive?
+
+  ''',
+
+"command_waiting" : cat /etc/passwd | grep "bash"
+
+"incorrect" : '''Use a pipe, taking the standard output from cat and grepping.
+`cat /etc/passwd | grep "bash"`
+''',
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The users that have /bin/bash are typically interactive",
+
+"message" : '''
+
+We see our user, `pi`, and we see another account, `root`.
+
+Well -- wait a minute... we didn't see a folder for the `root` account when we 
+looked at the home directories. Right? Let's take a look again, just `ls`.
+
+  ''',
+
+"proper_directory": "/home"
+
+"command_waiting" : ls
+
+"incorrect" : '''Run `ls` one more time to verify there is nothing else in /home.''',
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "The root user has a home directory in /root",
+
+"message" : '''
+
+Yup, no directory for `root`.
+
+It says in the `/etc/passwd` file that the home directory for the `root` user is in the
+directory `/root` (you can see it in the fifth field, remember the colon is a delimeter).
+
+Let's try and `cd` into his home directory... `cd /root`
+
+  ''',
+
+"command_waiting" : cd /root
+
+"incorrect" : '''Try and `cd` into the root user's home directory... `cd /root`''',
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You don't have the rights to view things that are not yours",
+
+"message" : '''
+
+Ah! Permission denied! 
+
+We are not allowed into the `root` user's home directory because -- well -- we are 
+not the `root` user! We shouldn't be messing with his files, because they do not
+belong to us. We do not have the proper FILE PERMISSIONS to be able to work with them.
+
+First of all, why does the `root` user have his home directory in the `/root` folder, and 
+not in `/home`, like all the rest of the users? 
+
+So the `root` user is a very special user. `root` is the "super user". `root` is the
+user that has complete control over everything on a Linux computer; he is the Administrator,
+and has privileges to do LITERALLY ANYTHING on the computer. 
+
+That's a pretty powerful user account, right? 
+
+To add security within Linux, there exists the idea of "least privilege". 
+Normal users, like our `pi` user, have "least privilege" -- it can only do things that it
+should be able to do. It cannot easily add other users, or install software, or make changes
+to crucial parts of the file system. In order to do things like that within Linux,
+we must BORROW the `root` user's powers temporarily.
+
+Let's run the `whoami` command again.
+
+  ''',
+
+"command_waiting" : whoami
+
+"incorrect" : '''Let's run the `whoami` command again.''',
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "root has complete control over the Linux system.",
+
+"message" : '''
+
+We're still the `pi` user.
+
+We were able to view and read the `/etc/passwd` file because it is WORLD-READABLE.
+We, even as the `pi` user, have the permissions to read the file (everyone does).
+
+But remember when I told you the password hashes for users were stored elsewhere?
+They are stored in another special file, the `/etc/shadow` file.
+
+HOWEVER, we do not have the permissions to read it. 
+Seriously, try it out -- try to `cat /etc/shadow`.
+
+
+  ''',
+
+"command_waiting" : cat /etc/shadow
+
+"incorrect" : '''Try to `cat /etc/shadow`.''',
+
+  },
+
+# ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "When we borrow the root user's power, we can escalate our privileges",
+
+"message" : '''
+
+Permission denied again.
+
+But, the `root` user is the "super user", right? He can do anything!
+
+So, we can temporarily BORROW his powers to view the file. The way that we do that in
+Linux is by the use of another special command: `sudo`.
+
+You can think of `sudo` as like "Super User DO." You can preface just about any command
+with it, and it will be run as root.
+
+The first time you run it, it may ask for your password. This verifies that you are who
+you say you are; and it checks to make sure if even your account has the privilege to 
+run the `sudo` command (thankfully the `pi` account does). Remember, the password for the
+`pi` user account is "raspberry"
+
+Try the command like so: `sudo cat /etc/shadow`
+
+  ''',
+
+"command_waiting" : sudo cat /etc/shadow
+
+"incorrect" : '''Try the command like so: `sudo cat /etc/shadow`''',
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "You tenporarily become the root user when you use sudo",
+
+"message" : '''
+
+Nice! Now we have some output, we can finally view the file. You should be able to
+see some password hashes now, for the "REAL" user accounts (should be just `pi`).
+
+You'll notice that the `root` user still has no password. On most modern Linux system,
+the `root` user is not designed to be something you would normally log in with. You
+would never really have a "password" for the root user because you should always borrow
+his powers with the sudo command.
+
+Remember when we ran `whoami` earlier? We're still logged in as the `pi` user so that
+is what it tells us... but what if we run it with `sudo`?
+
+  ''',
+
+"command_waiting" : sudo whoami
+
+"incorrect" : '''Remember the `sudo` part comes before the real command. `sudo whoami`''',
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "When we borrow the root user's power, we can escalate our privileges",
+
+"message" : '''
+
+Ha! See, we're BORROWING the root user's power and temporarily using the root account.
+
+Let's do some more interesting reconnaissance. Try the `id` command again, but this time,
+with sudo.
+
+  ''',
+
+"command_waiting" : sudo id
+
+"incorrect" : '''Use `sudo id`.''',
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "root always has a user ID of zero.",
+
+"message" : '''
+
+See how the output has changed? Now, the user we're looking at is the `root` user.
+We see a user ID of 0. This is important -- the `root` user will ALWAYS -- on every
+Linux computer you come to -- will ALWAYS have a user ID of 0. It's a special identifier.
+
+You can see the same for the group ID and the groups he belongs to. He only belongs
+to one group; the `root` group.
+
+Here is an interesting thing: try the old `w` command, to see who is logged in...
+but run it as root.
+
+  ''',
+
+"command_waiting" : sudo w
+
+"incorrect" : '''To run a command as root, you want to prefix it with `sudo`!''',
+
+  },
+
+  # ----------------------------------------------------------------------
+  
+  {
+    
+"tag" : "Commands ran with sudo are executed in a separate shell",
+
+"message" : '''
+
+Notice all of the visible users are still `pi`. The `sudo` command, seen in the far right
+column, is invoked within `sh`, another kind of shell just like `bash`. 
+
+Again, for added security, every instance of the `sudo` command is ran its in own separate
+shell and environment -- you wouldn't actually see the `w` process running under the root
+user.
+
+  ''',
+
+  }
+
+]
+}

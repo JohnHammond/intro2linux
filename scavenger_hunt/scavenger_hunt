@@ -1,0 +1,144 @@
+#!/bin/bash
+
+CURRENT_USER=`logname`
+RED=`tput setaf 1`							# code for red console text
+GREEN=`tput setaf 2`						# code for green text
+NC=`tput sgr0`								# Reset the text color
+
+
+function create_flag(){
+
+	echo $1 > "$2"
+	chmod a+r "$2"
+}
+
+function make_growing_roots(){
+
+	echo "$FUNCNAME: ${GREEN} creating flag for Growing Roots... ${NC}"
+	
+	create_flag "USCGA{the_start_of_the_linux_filesystem_is_a_forward_slash}" "/FINDME1.txt"
+}
+
+function make_stuck_in_a_bin(){
+
+	echo "$FUNCNAME: ${GREEN} creating flag for Stuck in a Bin... ${NC}"
+	
+	create_flag "USCGA{/bin_and_/usr/bin/_is_where_command_line_programs_are_stored}" "/usr/bin/FINDME2.txt"
+}
+
+function make_hiding_at_home(){
+
+	echo "$FUNCNAME: ${GREEN} creating flag for Hiding at Home... ${NC}"
+	
+	create_flag "USCGA{hidden_files_in_linux_start_with_a_period}" "/home/pi/.FINDME3.txt"
+}
+
+
+function make_temporary_contemporary(){
+
+	echo "$FUNCNAME: ${GREEN} creating flag for Temporary Contemporary... ${NC}"
+	
+	mkdir -p /tmp/FINDME/over_here/almost_there/
+	create_flag "USCGA{/tmp_is_where_temporary_files_and_folders_go}" "/tmp/FINDME/over_here/almost_there/FINDME4.txt"
+}
+
+
+function make_i_lost_my_file(){
+
+	echo "$FUNCNAME: ${GREEN} creating flag for I lost my file... ${NC}"
+	
+	create_flag "USCGA{/etc_is_where_configs_and_user_passwords_are_stored}" "/etc/FINDME5.txt"
+}
+
+
+function make_parent_directory(){
+
+	echo "$FUNCNAME: ${GREEN} creating flag for Parent Directory... ${NC}"
+	
+	mkdir -p /tmp/first_steps/second_steps/more_steps/whereisit/isitoverhere/howabouthere/oh/itmustbehere
+	create_flag "USCGA{.._is_the_fastest_way_to_move}" "/tmp/first_steps/second_steps/more_steps/whereisit/isitoverhere/howabouthere/oh/.FINDME6.txt"
+}
+
+
+function make_the_labyrinth(){
+
+	echo "$FUNCNAME: ${GREEN} creating flag for The Labyrinth... ${NC}"
+	
+	mkdir -p /tmp/labyrinth/left/left_again/left_once_more/left_for_dead/
+	mkdir -p /tmp/labyrinth/right/left/
+	mkdir -p /tmp/labyrinth/right/where/
+	mkdir -p /tmp/labyrinth/right/where/somewhere
+	mkdir -p /tmp/labyrinth/right/where/here
+	mkdir -p /tmp/labyrinth/right/where/notinhere
+	mkdir -p /tmp/labyrinth/right/where/notinhere/thenwhere
+	mkdir -p /tmp/labyrinth/right/where/itshouldbe
+	mkdir -p /tmp/labyrinth/right/where/itshouldbe/not
+	mkdir -p /tmp/labyrinth/right/where/itshouldbe/overhere
+	mkdir -p /tmp/labyrinth/right/where/itshouldbe/whereisit
+	mkdir -p /tmp/labyrinth/right/where/itshouldbe/left
+	mkdir -p /tmp/labyrinth/right/where/itshouldbe/right
+	mkdir -p /tmp/labyrinth/right/where/notinhere/thenwhere/howabouthere
+	mkdir -p /tmp/labyrinth/right/where/notinhere/isitoverhere
+	mkdir -p /tmp/labyrinth/right/left/right_again/
+	mkdir -p /tmp/labyrinth/right/left/right_where/
+	mkdir -p /tmp/labyrinth/right/right_again/left_now/
+	mkdir -p /tmp/labyrinth/right/right_again/left/
+	mkdir -p /tmp/labyrinth/right/right_again/left_where/
+	mkdir -p /tmp/labyrinth/right/right_again/right_over_here/
+	mkdir -p /tmp/labyrinth/left/right/left/
+	mkdir -p /tmp/labyrinth/left/right/righty_tighty/
+	mkdir -p /tmp/labyrinth/left/right/what/
+	mkdir -p /tmp/labyrinth/left/right/what/whereami
+	mkdir -p /tmp/labyrinth/left/right/what/left
+	mkdir -p /tmp/labyrinth/left/right/what/right
+	mkdir -p /tmp/labyrinth/left/rightright
+	mkdir -p /tmp/labyrinth/left/lefty_on
+	mkdir -p /tmp/labyrinth/left/up
+	mkdir -p /tmp/labyrinth/left/up/down
+	mkdir -p /tmp/labyrinth/left/up/right
+	mkdir -p /tmp/labyrinth/left/up/right/right_again
+	mkdir -p /tmp/labyrinth/left/up/right/right_again
+	mkdir -p /tmp/labyrinth/left/up/left_again
+	mkdir -p /tmp/labyrinth/left/up/left_once_more
+	mkdir -p /tmp/labyrinth/left/up/down/left_again
+	mkdir -p /tmp/labyrinth/left/up/down/goldmine
+
+	create_flag "USCGA{ls_-R_makes_for_awesome_recursion}" "/tmp/labyrinth/right/where/itshouldbe/.FINDME7.txt"
+}
+
+
+
+function say_complete(){
+
+	echo "$0: ${GREEN} Scavenger hunt successfully setup!${NC}"
+	echo ''
+	echo 'The first submission for "0. Getting Started!" is: ...'
+	echo ''
+	echo 'USCGA{the_period_is_a_symbol_for_the_current_directory} ' 
+
+}
+
+function main()
+{
+
+	make_growing_roots
+	make_stuck_in_a_bin
+	make_hiding_at_home
+	make_temporary_contemporary
+	make_i_lost_my_file
+	make_parent_directory
+	make_the_labyrinth
+
+	say_complete
+
+	exit 0
+	
+}
+
+# Make sure the user is root (e.g. running as sudo)
+if [ "$(id -u)" != "0" ]; then
+	echo "$0: ${RED}you must invoke this program with \"sudo ./scavenger_hunt\".${NC}"
+	exit -1
+fi
+
+main $@
